@@ -83,6 +83,12 @@ body, html {
   background-position: bottom;
 }
 
+.main__header__bgc {
+  background-image: url(../img/header-bgc.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
 .main__header .container {
   background-image: url(../img/header-bgc-title.png);
   background-repeat: no-repeat;
