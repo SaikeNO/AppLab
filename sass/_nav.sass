@@ -1,0 +1,28 @@
+.container__nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 40px 0 10px
+
+.logo
+    font-size: 3rem
+    display: inline-block
+    &--link
+        text-decoration: none
+        color: $black-color
+    &--black
+        color: $yellow-color
+
+.main__nav
+    &__elem
+        text-align: right
+        display: inline-block
+        &--link
+            text-decoration: none
+            color: $black-color
+            padding: 18px 12px
+            transition: .2s
+            border-bottom: 2px solid transparent
+            font-size: 1.6rem
+            &:hover
+                border-bottom: 2px solid $black-color

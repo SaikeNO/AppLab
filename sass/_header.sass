@@ -1,0 +1,53 @@
+.main__header
+    background-image: url(../img/header-bgc-bottom.png)
+    background-repeat: no-repeat
+    background-position: bottom
+    // position: relative
+    // &::before
+    //     content: ''
+    //     position: absolute
+    //     top: 0
+    //     left: 0
+    //     width: 1000px
+    //     height: 1000px
+    //     background-image: url( url(../img/header-bgc.png))
+    .container
+        background-image: url(../img/header-bgc-title.png)
+        background-repeat: no-repeat
+        background-position: 10px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        position: relative
+    &__img
+        img
+            width: 100%
+
+.welcome-text
+    flex-basis: 50%
+    margin-top: -100px
+    font-size: 1.8rem
+    &__title
+        font-size: 6rem
+        padding: 14px 0
+        line-height: 1.3
+    &__certificate
+        background-color: #E2EAED
+        display: inline-block
+        padding: 4px 20px 4px 0
+        border-radius: 20px
+        &__arrow
+            background-color: #FEAA25
+            padding: 5px 10px
+            border-radius: 20px
+            margin-right: 6px
+            color: #fff
+            border: 2px solid
+    &__description
+        width: 80%
+        color: $black-description-color
+        padding-bottom: 25px
+    &__link
+        color: $blue-color
+        text-decoration: none
+        margin-left: 30px
