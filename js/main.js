@@ -5,7 +5,7 @@ burger.addEventListener('click', ()=>{
     menu.classList.toggle('active')
     if(menu.classList.contains('active')){
         menu.style.opacity = 1
-        document.body.style.overflowY= 'hidden'
+        document.body.style.overflow= 'hidden';
     } else{
         menu.style.opacity = 0
         document.body.style.overflowY = 'initial'
@@ -15,5 +15,7 @@ burger.addEventListener('click', ()=>{
 window.addEventListener('resize', ()=>{
     if(window.innerWidth > 854){
         menu.style.opacity = 1
+        menu.classList.remove('active')
     } 
 })
+

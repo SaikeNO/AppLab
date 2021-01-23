@@ -472,11 +472,14 @@ body, html {
   .designed__title__h2 {
     font-size: 2.8rem;
   }
+  .btn {
+    margin: 0;
+  }
 }
 
 @media (max-width: 854px) {
   .main__nav__ul {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     display: -webkit-box;
@@ -497,7 +500,9 @@ body, html {
     background-color: #F9FBFC;
   }
   .main__nav__burger {
-    display: block;
+    position: fixed;
+    top: 35px;
+    right: 40px;
     cursor: pointer;
     padding: 10px;
     z-index: 3;
@@ -553,6 +558,172 @@ body, html {
   ul.active ~ .main__nav__burger span:nth-child(3) {
     -webkit-transform: rotate(-45deg) translate(0, -1px);
             transform: rotate(-45deg) translate(0, -1px);
+  }
+}
+
+@media (max-width: 768px) {
+  .features__img {
+    display: none;
+  }
+  .designed__img img {
+    width: 250px;
+  }
+  .designed__title {
+    padding-left: 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main__header .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main__header__img img {
+    width: 280px;
+  }
+  .welcome-text {
+    margin-top: 20px;
+  }
+  .main__header .container {
+    background-image: none;
+  }
+  .companies__imgs {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .companies__imgs__img {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    text-align: center;
+    padding-top: 40px;
+  }
+  .companies__title {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .jackpots .container {
+    padding: 0 0 0 50px;
+  }
+  .designed .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .designed__img {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .designed__title .btn {
+    display: block;
+    margin: 0 auto;
+  }
+  .designed__title {
+    padding: 0;
+  }
+  .main__nav__elem {
+    padding: 20px;
+  }
+  .main__nav__ul {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 533px) {
+  .features__text {
+    padding-left: 30px;
+    margin: 0 auto;
+  }
+  .jackpots__title__h2 {
+    padding-right: 10px;
+  }
+  .jackpots__title__description {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .welcome-text__title {
+    font-size: 3rem;
+  }
+  .welcome-text__link {
+    margin-left: 10px;
+  }
+  .container__nav {
+    padding: 15px 0;
+  }
+  .jackpots .container {
+    padding: 28px;
+  }
+  .jackpots__title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .jackpots__title__h2 {
+    border-right: none;
+    border-bottom: 2px solid #4B4A48;
+    padding-bottom: 20px;
+  }
+  .jackpots__title__description {
+    padding: 20px 0;
+  }
+  .items--row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .items__item--jackpots {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .items__title__description {
+    width: auto;
+  }
+  .items__item--jackpots .items__img {
+    margin: 0 0 20px 0;
+  }
+  .designed .container {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .main__nav__elem {
+    padding: 15px;
+  }
+  .main__nav__elem--link {
+    font-size: 2rem !important;
+  }
+  .welcome-text {
+    font-size: 1.3rem;
+  }
+  .logo {
+    font-size: 2.3rem;
+  }
+  .main__nav__burger {
+    top: 28px;
   }
 }
 /*# sourceMappingURL=style.css.map */
