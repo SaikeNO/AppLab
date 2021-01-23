@@ -221,8 +221,9 @@ body, html {
 .items__img {
   border-radius: 50%;
   padding: 15px;
-  margin-right: 30px;
+  margin: 0 30px 30px 0;
   height: 88px;
+  width: 88px;
 }
 
 .items__title__h3 {
@@ -237,7 +238,7 @@ body, html {
 }
 
 .items__title__description--row {
-  width: auto;
+  width: 70%;
 }
 
 .items__item {
@@ -248,6 +249,10 @@ body, html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.items__item--jackpots {
+  display: block;
 }
 
 .items__item--red h3 {
@@ -278,6 +283,10 @@ body, html {
   margin: 130px 0;
 }
 
+.jackpots .container {
+  padding: 0 100px;
+}
+
 .jackpots__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -292,7 +301,7 @@ body, html {
   font-size: 4rem;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  padding: 0 50px;
+  padding-right: 50px;
   border-right: 2px solid #4B4A48;
 }
 
@@ -300,7 +309,46 @@ body, html {
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
   font-size: 1.6rem;
-  padding: 0 50px;
+  padding-left: 50px;
   color: #616368;
+}
+
+.designed {
+  padding-bottom: 100px;
+  border-bottom: 2px solid #E5E6E5;
+  margin: 150px;
+}
+
+.designed .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.designed__img {
+  width: 600px;
+}
+
+.designed__title {
+  padding-left: 100px;
+}
+
+.designed__title__h2 {
+  font-size: 3.6rem;
+  margin-bottom: 30px;
+}
+
+.designed__title__description {
+  font-size: 1.6rem;
+  color: #616368;
+  margin-bottom: 30px;
+}
+
+.designed__title .btn {
+  margin: 0;
+  font-size: 1.6rem;
 }
 /*# sourceMappingURL=style.css.map */
