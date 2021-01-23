@@ -432,11 +432,11 @@ body, html {
   .jackpots {
     margin-bottom: 100px;
   }
-  .designed {
-    margin: 50px 0;
-  }
   .jackpots__title {
     margin-bottom: 30px;
+  }
+  .designed {
+    margin: 50px 0;
   }
 }
 
@@ -698,11 +698,11 @@ body, html {
             justify-content: center;
     text-align: center;
   }
-  .items__title__description {
-    width: auto;
-  }
   .items__item--jackpots .items__img {
     margin: 0 0 20px 0;
+  }
+  .items__title__description {
+    width: auto;
   }
   .designed .container {
     margin: 0 20px;

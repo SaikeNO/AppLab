@@ -26,35 +26,39 @@
         max-width: 980px
     .welcome-text
         font-size: 1.4rem
-    .welcome-text__title
-        font-size: 4.4rem
+        &__title
+            font-size: 4.4rem
     .main__header__img
         img
             width: 330px
     .features__img
         img
             width: 400px
-    .items__title__h3
-        font-size: 1.7rem
-    .items__title__description
-        font-size: 1.4rem
-    .jackpots__title__h2
-        font-size: 3rem
-    .jackpots__title__description
-        font-size: 1.4rem
+    .items__title
+        &__h3
+            font-size: 1.7rem
+        &__description
+            font-size: 1.4rem
+    .jackpots__title
+        &__h2
+            font-size: 3rem
+        &__description
+            font-size: 1.4rem
     .designed__img
         img
             width: 380px
-    .designed__title__h2
-        font-size: 3rem
-    .designed__title__description
-        font-size: 1.4rem
+    .designed__title
+        &__h2
+            font-size: 3rem
+    .designed__title
+        &__description
+            font-size: 1.4rem
     .jackpots
         margin-bottom: 100px
+        &__title
+            margin-bottom: 30px
     .designed
         margin: 50px 0
-    .jackpots__title
-        margin-bottom: 30px
 
 @media ( max-width: 960px )
     .designed .container
@@ -67,11 +71,13 @@
     .features__img
         img
             width: 300px
-    .features__text__title__h2
-        font-size: 3rem
-    .features__text__title__description
-        font-size: 1.4rem
-        margin: 10px 0 20px
+    .features__text__title
+        &__h2
+            font-size: 3rem
+    .features__text__title
+        &__description
+            font-size: 1.4rem
+            margin: 10px 0 20px
     .items__item
         padding: 10px 0
     .jackpots
@@ -164,12 +170,13 @@
         background-image: none
     .companies__imgs
         flex-wrap: wrap
-    .companies__imgs__img
-        flex-basis: 50%
-        text-align: center
-        padding-top: 40px
+        &__img
+            flex-basis: 50%
+            text-align: center
+            padding-top: 40px
     .companies__title
         margin-bottom: 30px
+
 @media ( max-width: 640px )
     .jackpots .container
         padding: 0 0 0 50px
@@ -188,14 +195,17 @@
         padding: 20px
     .main__nav__ul
         padding-top: 50px
+
 @media (max-width: 533px)
     .features__text
         padding-left: 30px
         margin: 0 auto
-    .jackpots__title__h2
-        padding-right: 10px
-    .jackpots__title__description
-        padding-left: 20px
+    .jackpots__title
+        &__h2
+            padding-right: 10px
+        &__description
+            padding-left: 20px
+
 @media ( max-width: 375px )
     .welcome-text__title
         font-size: 3rem
@@ -207,12 +217,12 @@
         padding: 28px
     .jackpots__title
         flex-direction: column
-    .jackpots__title__h2
-        border-right: none
-        border-bottom: 2px solid #4B4A48
-        padding-bottom: 20px
-    .jackpots__title__description
-        padding: 20px 0
+        &__h2
+            border-right: none
+            border-bottom: 2px solid #4B4A48
+            padding-bottom: 20px
+        &__description
+            padding: 20px 0
     .items--row
         flex-direction: column
         align-items: center
@@ -221,13 +231,13 @@
         flex-direction: column
         justify-content: center
         text-align: center
-    .items__title__description
-        width: auto
-    .items__item--jackpots
         .items__img
             margin: 0 0 20px 0
+    .items__title__description
+        width: auto
     .designed .container
         margin: 0 20px
+
 @media ( max-width: 320px )
     .main__nav__elem
         padding: 15px
