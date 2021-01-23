@@ -1,0 +1,140 @@
+@media ( max-width: 1450px )
+    .container
+        max-width: 1200px
+    .items__title__description
+        width: 80%
+    .features__text__title__h2
+        width: auto
+    .companies
+        margin: 100px 0
+
+@media ( max-width: 1280px )
+    .jackpots
+        margin: 130px 0
+        .container
+            padding: 0 0 0 100px
+    .designed__img
+        img
+            width: 500px
+
+@media ( max-width: 1024px )
+    .main__nav__elem--link
+        font-size: 1.4rem
+    .logo
+        font-size: 2.6rem
+    .container
+        max-width: 980px
+    .welcome-text
+        font-size: 1.4rem
+    .welcome-text__title
+        font-size: 4.4rem
+    .main__header__img
+        img
+            width: 330px
+    .features__img
+        img
+            width: 400px
+    .items__title__h3
+        font-size: 1.7rem
+    .items__title__description
+        font-size: 1.4rem
+    .jackpots__title__h2
+        font-size: 3rem
+    .jackpots__title__description
+        font-size: 1.4rem
+    .designed__img
+        img
+            width: 380px
+    .designed__title__h2
+        font-size: 3rem
+    .designed__title__description
+        font-size: 1.4rem
+    .jackpots
+        margin-bottom: 100px
+    .designed
+        margin: 50px 0
+    .jackpots__title
+        margin-bottom: 30px
+
+@media ( max-width: 960px )
+    .designed .container
+        margin: 0 70px
+
+@media ( max-width: 854px )
+    .companies__imgs__img
+        img
+            width: 100px
+    .features__img
+        img
+            width: 300px
+    .features__text__title__h2
+        font-size: 3rem
+    .features__text__title__description
+        font-size: 1.4rem
+        margin: 10px 0 20px
+    .items__item
+        padding: 10px 0
+    .jackpots
+        margin: 90px 0
+    .designed__img
+        img
+            width: 330px
+    .designed__title__h2
+        font-size: 2.8rem
+
+//NAVI
+@media ( max-width: 854px )
+    .main__nav__ul
+        position: absolute
+        right: 0
+        top: 0
+        display: flex
+        flex-direction: column
+        z-index: 1
+        text-transform: uppercase
+        width: 100%
+        height: 100%
+        transform: translateX(100%)
+        transition: .7s
+        background-color: $bgc-color
+
+    .main__nav
+        &__burger
+            display: block
+            cursor: pointer
+            padding: 10px
+            z-index: 3
+            span
+                display: block
+                width: 33px
+                height: 4px
+                margin-bottom: 5px
+                position: relative
+                background-color: $black-color
+                border-radius: 3px
+                z-index: 2
+                transform-origin: 4px 0px
+                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
+                &:first-child
+                    transform-origin: 0% -50%
+                &:nth-child(3)
+                    transform-origin: 0% 150%
+
+        &__elem
+            text-align: center
+            padding: 50px
+            &--link
+                font-size: 2.5rem !important
+                border: none
+                &:hover
+                    border: none
+    ul.active
+        transform: translateX(0)
+
+        & ~ .main__nav__burger > span
+            transform: rotate(45deg) translate(-2px, -1px)
+        & ~ .main__nav__burger span:nth-child(2)
+            opacity: 0
+            transform: rotate(0deg) scale(0.2, 0.2)
+        & ~ .main__nav__burger span:nth-child(3)
+            transform: rotate(-45deg) translate(0, -1px)
