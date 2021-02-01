@@ -1,12 +1,14 @@
 @media ( max-width: 1450px )
     .container
         max-width: 1200px
-    .items__title__description
+    .items-apps__title__description
         width: 80%
     .features__text__title__h2
         width: auto
     .companies
         margin: 100px 0
+    .ultimate__imgs
+        left: -50px
 
 @media ( max-width: 1280px )
     .jackpots
@@ -16,6 +18,30 @@
     .designed__img
         img
             width: 500px
+    .why-us
+        margin-bottom: 100px
+    .ultimate .container
+        flex-direction: column
+    .ultimate__text
+        order: 2
+        text-align: center
+        padding-left: 0
+        &__title
+            width: 100%
+    .ultimate__imgs
+        order: 1
+        background-image: url(../img/ultimate/bg.png)
+        background-repeat: no-repeat
+        background-size: cover
+        text-align: center
+        margin-bottom: 50px
+        flex-basis: 100%
+        left: 0
+        img
+            position: static
+            &:nth-of-type(1)
+                background-image: none
+                margin-right: -250px
 
 @media ( max-width: 1024px )
     .main__nav__elem--link
@@ -34,7 +60,7 @@
     .features__img
         img
             width: 400px
-    .items__title
+    .items-apps__title
         &__h3
             font-size: 1.7rem
         &__description
@@ -64,7 +90,7 @@
             font-size: 3rem
         &__description
             font-size: 1.4rem
-    .why-us__items__item__title
+    .why-us__items-apps__item__title
         &__h4
             font-size: 1.7rem
         &__description
@@ -87,7 +113,7 @@
         &__description
             font-size: 1.4rem
             margin: 10px 0 20px
-    .items__item
+    .items-apps__item
         padding: 10px 0
     .jackpots
         margin: 90px 0
@@ -168,8 +194,11 @@
             width: 250px
     .designed__title
         padding-left: 60px
-    .why-us__items__item
+    .why-us__items-apps__item
         padding: 20px
+    .ultimate__imgs
+        img
+            height: 100%
 @media ( max-width: 700px )
     .main__header .container
         flex-direction: column
@@ -224,17 +253,17 @@
                 padding-bottom: 20px
             &__description
                 padding: 20px 0
-    .items--row
+    .items-apps--row
         flex-direction: column
         align-items: center
-    .items__item--jackpots
+    .items-apps__item--jackpots
         display: flex
         flex-direction: column
         justify-content: center
         text-align: center
-        .items__img
+        .items-apps__img
             margin: 0 0 20px 0
-    .items__title__description
+    .items-apps__title__description
         width: auto
     .designed .container
         margin: 0 20px

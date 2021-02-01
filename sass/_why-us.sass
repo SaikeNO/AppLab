@@ -1,5 +1,5 @@
 .why-us
-    margin: 0 auto
+    margin: 0 auto 200px
     text-align: center
     &__title
         margin-bottom: 50px
@@ -13,38 +13,42 @@
             font-size: 1.6rem
             width: 750px
             margin: 0 auto
-    &__items
-        display: flex
-        flex-wrap: wrap
-        &__item
-            margin: 0 auto
-            flex-basis: 350px
-            padding: 40px
-            &__img
-                display: inline-block
-                width: 90px
-                height: 90px
-                border-radius: 50%
-                &--first
-                    background-color: #FFECEF
-                &--second
-                    background-color: #EAF9FF
-                &--third
-                    background-color: #FFF6D3
-                &--fourth
-                    background-color: #E4FFEE
-                &--fifth
-                    background-color: #F4F4FF
-                &--sixth
-                    background-color: #FDEEE4
-                img
-                    margin-top: 15px
-            &__title
-                margin-top: 36px
-                &__h4
-                    font-size: 2rem
-                    color: $black-color
-                    margin-bottom: 15px
-                &__description
-                    font-size: 1.6rem
-                    color: $black-description-color
+.items-awards
+    display: flex
+    flex-wrap: wrap
+    &__item
+        margin: 0 auto
+        flex-basis: 350px
+        padding: 40px
+        &--ultimate
+            flex-basis: 50%
+            padding-left: 0
+        &__img
+            display: inline-block
+            width: 90px
+            height: 90px
+            border-radius: 50%
+            text-align: center
+            &--first
+                background-color: #FFECEF
+            &--second
+                background-color: #EAF9FF
+            &--third
+                background-color: #FFF6D3
+            &--fourth
+                background-color: #E4FFEE
+            &--fifth
+                background-color: #F4F4FF
+            &--sixth
+                background-color: #FDEEE4
+            img
+                margin-top: 15px
+        &__title
+            margin-top: 36px
+            &__h4
+                font-size: 2rem
+                color: $black-color
+                margin-bottom: 15px
+            &__description
+                font-size: 1.6rem
+                color: $black-description-color

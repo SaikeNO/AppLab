@@ -217,13 +217,13 @@ body, html {
   margin: 10px 0 50px;
 }
 
-.items--row {
+.items-apps--row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.items__img {
+.items-apps__img {
   border-radius: 50%;
   padding: 15px;
   margin: 0 30px 30px 0;
@@ -231,22 +231,22 @@ body, html {
   width: 88px;
 }
 
-.items__title__h3 {
+.items-apps__title__h3 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.items__title__description {
+.items-apps__title__description {
   font-size: 1.6rem;
   width: 40%;
   color: #616368;
 }
 
-.items__title__description--row {
+.items-apps__title__description--row {
   width: 70%;
 }
 
-.items__item {
+.items-apps__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,31 +256,31 @@ body, html {
           align-items: center;
 }
 
-.items__item--jackpots {
+.items-apps__item--jackpots {
   display: block;
 }
 
-.items__item--red h3 {
+.items-apps__item--red h3 {
   color: #F55767;
 }
 
-.items__item--red .items__img {
+.items-apps__item--red .items-apps__img {
   background-color: #FFECEF;
 }
 
-.items__item--blue h3 {
+.items-apps__item--blue h3 {
   color: #2563FF;
 }
 
-.items__item--blue .items__img {
+.items-apps__item--blue .items-apps__img {
   background-color: #F4F4FF;
 }
 
-.items__item--green h3 {
+.items-apps__item--green h3 {
   color: #40975F;
 }
 
-.items__item--green .items__img {
+.items-apps__item--green .items-apps__img {
   background-color: #E4FFEE;
 }
 
@@ -360,7 +360,7 @@ body, html {
 }
 
 .why-us {
-  margin: 0 auto;
+  margin: 0 auto 200px;
   text-align: center;
 }
 
@@ -382,7 +382,7 @@ body, html {
   margin: 0 auto;
 }
 
-.why-us__items {
+.items-awards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -390,68 +390,126 @@ body, html {
       flex-wrap: wrap;
 }
 
-.why-us__items__item {
+.items-awards__item {
   margin: 0 auto;
   -ms-flex-preferred-size: 350px;
       flex-basis: 350px;
   padding: 40px;
 }
 
-.why-us__items__item__img {
+.items-awards__item--ultimate {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding-left: 0;
+}
+
+.items-awards__item__img {
   display: inline-block;
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  text-align: center;
 }
 
-.why-us__items__item__img--first {
+.items-awards__item__img--first {
   background-color: #FFECEF;
 }
 
-.why-us__items__item__img--second {
+.items-awards__item__img--second {
   background-color: #EAF9FF;
 }
 
-.why-us__items__item__img--third {
+.items-awards__item__img--third {
   background-color: #FFF6D3;
 }
 
-.why-us__items__item__img--fourth {
+.items-awards__item__img--fourth {
   background-color: #E4FFEE;
 }
 
-.why-us__items__item__img--fifth {
+.items-awards__item__img--fifth {
   background-color: #F4F4FF;
 }
 
-.why-us__items__item__img--sixth {
+.items-awards__item__img--sixth {
   background-color: #FDEEE4;
 }
 
-.why-us__items__item__img img {
+.items-awards__item__img img {
   margin-top: 15px;
 }
 
-.why-us__items__item__title {
+.items-awards__item__title {
   margin-top: 36px;
 }
 
-.why-us__items__item__title__h4 {
+.items-awards__item__title__h4 {
   font-size: 2rem;
   color: #242F51;
   margin-bottom: 15px;
 }
 
-.why-us__items__item__title__description {
+.items-awards__item__title__description {
   font-size: 1.6rem;
   color: #616368;
+}
+
+.ultimate .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ultimate__text {
+  position: relative;
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  padding-left: 50px;
+}
+
+.ultimate__text__title {
+  width: 400px;
+}
+
+.ultimate__text__title__h3 {
+  font-size: 3.6rem;
+  color: #242F51;
+  margin-bottom: 20px;
+}
+
+.ultimate__text__title__description {
+  font-size: 1.6rem;
+  color: #616368;
+}
+
+.ultimate__imgs {
+  position: relative;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.ultimate__imgs img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ultimate__imgs img:nth-of-type(1) {
+  background-image: url(../img/ultimate/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ultimate__imgs img:nth-of-type(2) {
+  left: 50%;
+  top: 0;
 }
 
 @media (max-width: 1450px) {
   .container {
     max-width: 1200px;
   }
-  .items__title__description {
+  .items-apps__title__description {
     width: 80%;
   }
   .features__text__title__h2 {
@@ -459,6 +517,9 @@ body, html {
   }
   .companies {
     margin: 100px 0;
+  }
+  .ultimate__imgs {
+    left: -50px;
   }
 }
 
@@ -471,6 +532,45 @@ body, html {
   }
   .designed__img img {
     width: 500px;
+  }
+  .why-us {
+    margin-bottom: 100px;
+  }
+  .ultimate .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ultimate__text {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    text-align: center;
+    padding-left: 0;
+  }
+  .ultimate__text__title {
+    width: 100%;
+  }
+  .ultimate__imgs {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    background-image: url(../img/ultimate/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin-bottom: 50px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    left: 0;
+  }
+  .ultimate__imgs img {
+    position: static;
+  }
+  .ultimate__imgs img:nth-of-type(1) {
+    background-image: none;
+    margin-right: -250px;
   }
 }
 
@@ -496,10 +596,10 @@ body, html {
   .features__img img {
     width: 400px;
   }
-  .items__title__h3 {
+  .items-apps__title__h3 {
     font-size: 1.7rem;
   }
-  .items__title__description {
+  .items-apps__title__description {
     font-size: 1.4rem;
   }
   .jackpots__title__h2 {
@@ -532,10 +632,10 @@ body, html {
   .why-us__title__description {
     font-size: 1.4rem;
   }
-  .why-us__items__item__title__h4 {
+  .why-us__items-apps__item__title__h4 {
     font-size: 1.7rem;
   }
-  .why-us__items__item__title__description {
+  .why-us__items-apps__item__title__description {
     font-size: 1.4rem;
   }
 }
@@ -560,7 +660,7 @@ body, html {
     font-size: 1.4rem;
     margin: 10px 0 20px;
   }
-  .items__item {
+  .items-apps__item {
     padding: 10px 0;
   }
   .jackpots {
@@ -674,8 +774,11 @@ body, html {
   .designed__title {
     padding-left: 60px;
   }
-  .why-us__items__item {
+  .why-us__items-apps__item {
     padding: 20px;
+  }
+  .ultimate__imgs img {
+    height: 100%;
   }
 }
 
@@ -767,7 +870,7 @@ body, html {
   .jackpots__title__description {
     padding: 20px 0;
   }
-  .items--row {
+  .items-apps--row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -776,7 +879,7 @@ body, html {
         -ms-flex-align: center;
             align-items: center;
   }
-  .items__item--jackpots {
+  .items-apps__item--jackpots {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -789,10 +892,10 @@ body, html {
             justify-content: center;
     text-align: center;
   }
-  .items__item--jackpots .items__img {
+  .items-apps__item--jackpots .items-apps__img {
     margin: 0 0 20px 0;
   }
-  .items__title__description {
+  .items-apps__title__description {
     width: auto;
   }
   .designed .container {
