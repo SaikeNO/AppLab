@@ -42,6 +42,9 @@
             &:nth-of-type(1)
                 background-image: none
                 margin-right: -250px
+    .items-awards__item--ultimate
+        padding: 20px
+        flex-basis: 390px
 
 @media ( max-width: 1024px )
     .main__nav__elem--link
@@ -199,6 +202,15 @@
     .ultimate__imgs
         img
             height: 100%
+    .items-awards__item
+        flex-basis: auto
+        padding: 20px 40px
+@media ( max-width: 728px )
+    .ultimate__imgs
+        img
+            width: 60%
+            &:nth-of-type(1)
+                margin-right: -30%
 @media ( max-width: 700px )
     .main__header .container
         flex-direction: column
@@ -269,7 +281,10 @@
         margin: 0 20px
     .why-us__title__h3
         width: 80%
-
+    .ultimate__text__title__h3
+        font-size: 2.8rem
+    .items-awards__item__title__description
+        font-size: 1.4rem
 @media ( max-width: 375px )
     .welcome-text__title
         font-size: 3rem
@@ -277,6 +292,8 @@
         margin-left: 10px
     .container__nav
         padding: 15px 0
+    .items-awards__item
+        padding: 20px
 
 @media ( max-width: 320px )
     .main__nav__elem
@@ -289,3 +306,8 @@
         font-size: 2.3rem
     .main__nav__burger
         top: 28px
+    .jackpots__title__h2
+        padding: 0
+        font-size: 2.7rem
+    .why-us__title__h3
+        width: 100%
