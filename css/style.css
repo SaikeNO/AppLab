@@ -33,11 +33,12 @@ body, html {
 }
 
 .more-items {
-  display: none;
   padding: 15px 18px !important;
 }
 
 .more-items .btn {
+  margin: 0 auto;
+  display: none;
   cursor: pointer;
 }
 
@@ -398,8 +399,8 @@ body, html {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow: hidden;
-  -webkit-transition: 2s;
-  transition: 2s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .items-awards__item {

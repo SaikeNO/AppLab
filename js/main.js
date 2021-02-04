@@ -12,7 +12,7 @@ burger.addEventListener('click', ()=>{
 
 const whyUsSection = document.querySelector('.items-awards')
 const whyUsItem = document.querySelector('.items-awards__item')
-const moreBtn = document.querySelector('.more-items')
+const moreBtn = document.querySelector('.more-items .btn')
 
 window.addEventListener('resize', ()=>{
     if(window.innerWidth > 854){
@@ -32,8 +32,13 @@ if(mediaQuery.matches){
 
 moreBtn.addEventListener('click', ()=>{
     if(whyUsSection.style.height === `${whyUsItem.clientHeight}px`){
-        whyUsSection.style.height = 'auto'
+        whyUsSection.style.height = `${whyUsItem.clientHeight*6}px`
     } else {
         whyUsSection.style.height = `${whyUsItem.clientHeight}px`
+        window.scroll({
+            top: document.querySelector('.why-us').offsetTop - 50,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
 })
