@@ -156,19 +156,19 @@
             z-index: 3
             span
                 display: block
-                width: 33px
-                height: 4px
-                margin-bottom: 5px
+                width: 35px
+                height: 5px
+                margin-bottom: 7px
                 position: relative
                 background-color: $black-color
-                border-radius: 3px
+                border-radius: 4px
                 z-index: 2
-                transform-origin: 4px 0px
+
                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
                 &:first-child
-                    transform-origin: 0% -50%
+                    transform-origin: 0 100%
                 &:nth-child(3)
-                    transform-origin: 0% 150%
+                    transform-origin: 0 0
 
         &__elem
             text-align: center

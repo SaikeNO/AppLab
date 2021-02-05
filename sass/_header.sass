@@ -1,8 +1,15 @@
-.main__header
+.header
     background-image: url(../img/header/header-bgc-bottom.png)
     background-repeat: repeat-x
     background-position: bottom
-    &__bg
+    position: relative
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
         background-image: url(../img/header/header-bgc.png)
         background-repeat: no-repeat
         background-position: left
