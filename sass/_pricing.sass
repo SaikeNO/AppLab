@@ -1,0 +1,61 @@
+.pricing
+    text-align: center
+    margin-bottom: 400px
+    &__wrapper
+        max-width: 670px
+        margin: 0 auto
+    &__heading
+    &__title
+        font-size: 3.6rem
+        margin-bottom: 30px
+    &__description
+        font-size: 1.6rem
+        margin-bottom: 60px
+    &__switch-button
+        // display: block
+        position: relative
+        padding-left: $toggle-width
+        margin-bottom: 12px
+        cursor: pointer
+        font-size: 22px
+        // user-select: none
+
+        input
+            position: absolute
+            opacity: 0
+            cursor: pointer
+            height: 0
+            width: 0
+            &:checked ~ .control
+                background-color: #EBEBEB
+                &::before
+                    @include monthly_or_anually('Monthly',$toggle-gutter )
+                &::after
+                    left: $toggle-width - $toggle-width-inside - $toggle-gutter
+            &:checked ~ .control::after
+                content: "Annually"
+
+        .control
+            position: absolute
+            top: 0
+            left: 0
+            height: $toggle-height
+            width: $toggle-width
+            border-radius: $toggle-radius
+            background-color: #EBEBEB
+            transition: background-color $toggle-control-speed $toggle-control-ease
+            &::before
+                @include monthly_or_anually('Annually', $toggle-width - $toggle-width-inside - $toggle-gutter)
+            &::after
+                content: "Monthly"
+                color: white
+                font-size: 16px
+                line-height: $toggle-control-size
+                position: absolute
+                left: $toggle-gutter
+                top: $toggle-gutter
+                width: $toggle-width-inside
+                height: $toggle-control-size
+                border-radius: $toggle-radius
+                background-color: $blue-color
+                transition: left $toggle-control-speed $toggle-control-ease

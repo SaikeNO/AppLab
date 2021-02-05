@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -527,6 +527,106 @@ body, html {
 .ultimate__imgs img:nth-of-type(2) {
   left: 50%;
   top: 0;
+}
+
+.pricing {
+  text-align: center;
+  margin-bottom: 400px;
+}
+
+.pricing__wrapper {
+  max-width: 670px;
+  margin: 0 auto;
+}
+
+.pricing__title {
+  font-size: 3.6rem;
+  margin-bottom: 30px;
+}
+
+.pricing__description {
+  font-size: 1.6rem;
+  margin-bottom: 60px;
+}
+
+.pricing__switch-button {
+  position: relative;
+  padding-left: 280px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.pricing__switch-button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.pricing__switch-button input:checked ~ .control {
+  background-color: #EBEBEB;
+}
+
+.pricing__switch-button input:checked ~ .control::before {
+  content: "Monthly";
+  color: #616368;
+  font-size: 16px;
+  line-height: 50px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 140px;
+  height: 50px;
+}
+
+.pricing__switch-button input:checked ~ .control::after {
+  left: 135px;
+}
+
+.pricing__switch-button input:checked ~ .control::after {
+  content: "Annually";
+}
+
+.pricing__switch-button .control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 280px;
+  border-radius: 30px;
+  background-color: #EBEBEB;
+  -webkit-transition: background-color 0.15s ease-in;
+  transition: background-color 0.15s ease-in;
+}
+
+.pricing__switch-button .control::before {
+  content: "Annually";
+  color: #616368;
+  font-size: 16px;
+  line-height: 50px;
+  position: absolute;
+  left: 135px;
+  top: 5px;
+  width: 140px;
+  height: 50px;
+}
+
+.pricing__switch-button .control::after {
+  content: "Monthly";
+  color: white;
+  font-size: 16px;
+  line-height: 50px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 140px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #2500F9;
+  -webkit-transition: left 0.15s ease-in;
+  transition: left 0.15s ease-in;
 }
 
 @media (max-width: 1450px) {
