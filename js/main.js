@@ -42,3 +42,18 @@ moreBtn.addEventListener('click', ()=>{
         });
     }
 })
+
+// Pricing
+const switchPricing = document.querySelector(".pricing__switch-button input")
+const priceParagraph = document.querySelector('.pricing__cards__card--pro .price')
+const priceMonth = document.querySelector('.pricing__cards__card--pro .price__month')
+
+switchPricing.addEventListener('change',()=>{
+    if(switchPricing.checked){
+        priceParagraph.textContent = "$899"
+        priceMonth.textContent = "/year"
+    } else {
+        priceParagraph.textContent = "$99"
+        priceMonth.textContent = "/month"
+    }
+})

@@ -2,9 +2,8 @@
     text-align: center
     margin-bottom: 400px
     &__wrapper
-        max-width: 670px
+        max-width: 680px
         margin: 0 auto
-    &__heading
     &__title
         font-size: 3.6rem
         margin-bottom: 30px
@@ -12,14 +11,12 @@
         font-size: 1.6rem
         margin-bottom: 60px
     &__switch-button
-        // display: block
+        display: block
+        height: $toggle-height
         position: relative
-        padding-left: $toggle-width
-        margin-bottom: 12px
         cursor: pointer
         font-size: 22px
-        // user-select: none
-
+        user-select: none
         input
             position: absolute
             opacity: 0
@@ -27,35 +24,81 @@
             height: 0
             width: 0
             &:checked ~ .control
-                background-color: #EBEBEB
                 &::before
                     @include monthly_or_anually('Monthly',$toggle-gutter )
                 &::after
-                    left: $toggle-width - $toggle-width-inside - $toggle-gutter
+                    left: $toggle-width - $toggle-width-inside - $toggle-gutter - $toogle-border
             &:checked ~ .control::after
                 content: "Annually"
-
         .control
             position: absolute
             top: 0
-            left: 0
+            left: 50%
+            transform: translateX(-50%)
             height: $toggle-height
             width: $toggle-width
             border-radius: $toggle-radius
-            background-color: #EBEBEB
-            transition: background-color $toggle-control-speed $toggle-control-ease
+            // background-color: #EBEBEB
+            border: $toogle-border solid #EBEBEB
             &::before
-                @include monthly_or_anually('Annually', $toggle-width - $toggle-width-inside - $toggle-gutter)
+                @include monthly_or_anually('Annually', $toggle-width - $toggle-width-inside - $toggle-gutter - $toogle-border)
             &::after
-                content: "Monthly"
-                color: white
-                font-size: 16px
-                line-height: $toggle-control-size
-                position: absolute
-                left: $toggle-gutter
-                top: $toggle-gutter
-                width: $toggle-width-inside
-                height: $toggle-control-size
+                @include monthly_or_anually('Monthly',$toggle-gutter - $toogle-border)
+                color: #fff
                 border-radius: $toggle-radius
                 background-color: $blue-color
                 transition: left $toggle-control-speed $toggle-control-ease
+    &__cards
+        margin-top: 40px
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        &__card
+            border-radius: 5px
+            padding: 70px 50px 25px
+            position: relative
+            flex-basis: 320px
+            box-shadow: -10px 10px 30px -15px rgba(0, 0, 0, .2), 10px 10px 30px -15px rgba(0, 0, 0, .2)
+            background-color: #fff
+            z-index: 1
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                height: 250px
+                z-index: -1
+                background-color: #F4F7F9
+            .price
+                font-size: 6rem
+                font-weight: bold
+                &__month
+                    font-weight: normal
+                    font-size: 1.8rem
+                    color: $gray-color
+            .level
+                font-size: 2rem
+                font-weight: bold
+            .whom
+                font-size: 1.6rem
+                color: $gray-color
+                padding-bottom: 40px
+            .advantages
+                padding-top: 40px
+                li
+                    font-size: 1.6rem
+                    color: $gray-color
+                    padding-bottom: 20px
+            &--pro
+                border: 2px solid #E5E6E5
+                box-shadow: none
+                .trial
+                    display: block
+                    font-size: 1.6rem
+                    text-decoration: none
+                    color: $blue-color
+                    margin-top: 20px
+            .btn
+                margin: 20px 0 0 0
+                font-size: 1.6rem

@@ -1,6 +1,7 @@
 $yellow-color: #FCAE61
 $black-color: #242F51
 $black-description-color: #616368
+$gray-color: #999CA5
 $blue-color: #2500F9
 $light-red-color: #F55767
 $light-blue-color: #2563FF
@@ -13,7 +14,8 @@ $toggle-height: 60px
 $toggle-width-inside: $toggle-width / 2
 $toggle-gutter: 5px
 $toggle-radius: 50%
-$toggle-control-speed: .15s
+$toogle-border: 2px
+$toggle-control-speed: .18s
 $toggle-control-ease: ease-in
 
 $toggle-radius: $toggle-height / 2
@@ -26,6 +28,6 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2)
     line-height: $toggle-control-size
     position: absolute
     left: $left
-    top: $toggle-gutter
+    top: $toggle-gutter - $toogle-border
     width: $toggle-width-inside
     height: $toggle-control-size
