@@ -57,7 +57,7 @@
         font-size: 1.4rem
         &__title
             font-size: 4.4rem
-    .main__header__img
+    .header__img
         img
             width: 330px
     .features__img
@@ -138,7 +138,7 @@
         top: 0
         display: flex
         flex-direction: column
-        z-index: 1
+        z-index: 997
         text-transform: uppercase
         width: 100%
         height: 100%
@@ -153,7 +153,7 @@
             right: 40px
             cursor: pointer
             padding: 10px
-            z-index: 3
+            z-index: 999
             span
                 display: block
                 width: 35px
@@ -162,7 +162,7 @@
                 position: relative
                 background-color: $black-color
                 border-radius: 4px
-                z-index: 2
+                z-index: 998
 
                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
                 &:first-child
@@ -212,14 +212,14 @@
             &:nth-of-type(1)
                 margin-right: -30%
 @media ( max-width: 700px )
-    .main__header .container
+    .header .container
         flex-direction: column
-    .main__header__img
+    .header__img
         img
             width: 280px
     .welcome-text
         margin-top: 20px
-    .main__header .container
+    .header .container
         background-image: none
     .companies__imgs
         flex-wrap: wrap
@@ -291,8 +291,8 @@
             font-size: 3rem
         &__link
             margin-left: 10px
-    .container__nav
-        padding: 15px 0
+    .nav .container
+        padding: 15px 0 15px 10px
     .items-awards__item
         padding: 20px
 
@@ -312,3 +312,8 @@
         font-size: 2.7rem
     .why-us__title__h3
         width: 100%
+    .welcome-text__link
+        margin-top: 10px
+        display: block
+    .welcome-text
+        padding-left: 0
