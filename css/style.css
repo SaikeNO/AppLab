@@ -42,6 +42,24 @@ body, html {
   display: none;
 }
 
+.checked {
+  color: #FFCC00;
+}
+
+.disabled {
+  background-color: transparent !important;
+  color: #DEE1E6 !important;
+}
+
+[class*='description'] {
+  color: #616368;
+  font-size: 1.6rem;
+}
+
+[class*='title'] {
+  font-size: 4rem;
+}
+
 .nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -531,7 +549,9 @@ body, html {
 
 .pricing {
   text-align: center;
-  margin-bottom: 400px;
+  padding-bottom: 100px;
+  border-bottom: 2px solid #E5E6E5;
+  margin-bottom: 150px;
 }
 
 .pricing__wrapper {
@@ -647,8 +667,7 @@ body, html {
   border-radius: 5px;
   padding: 70px 50px 25px;
   position: relative;
-  -ms-flex-preferred-size: 320px;
-      flex-basis: 320px;
+  width: 320px;
   -webkit-box-shadow: -10px 10px 30px -15px rgba(0, 0, 0, 0.2), 10px 10px 30px -15px rgba(0, 0, 0, 0.2);
           box-shadow: -10px 10px 30px -15px rgba(0, 0, 0, 0.2), 10px 10px 30px -15px rgba(0, 0, 0, 0.2);
   background-color: #fff;
@@ -717,6 +736,213 @@ body, html {
   font-size: 1.6rem;
 }
 
+.testimonial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 200px;
+}
+
+.testimonial__map {
+  position: relative;
+  -ms-flex-preferred-size: 820px;
+      flex-basis: 820px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.testimonial__map__bg {
+  width: 100%;
+  opacity: .35;
+}
+
+.testimonial__map__person {
+  position: absolute;
+}
+
+.testimonial__map__person--first {
+  top: 15%;
+  left: 5%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial__map__person--second {
+  top: 34%;
+  left: 13%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial__map__person--third {
+  top: 45%;
+  left: 42%;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial__map__person--fourth {
+  top: 40%;
+  left: 65%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial__map__person--fifth {
+  top: 12%;
+  left: 70%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial__map__person--sixth {
+  top: 3%;
+  left: 30%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial__map__person--seventh {
+  top: 65%;
+  left: 18%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial__map__person img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.testimonial__content {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 600px;
+      flex-basis: 600px;
+  padding-right: 20px;
+}
+
+.testimonial__title {
+  margin-bottom: 30px;
+}
+
+.testimonial__description {
+  width: 85%;
+}
+
+.opinion__stars {
+  font-size: 2rem;
+  margin: 45px 0 30px 0;
+}
+
+.opinion__title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.opinion__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 80px;
+}
+
+.slider__img {
+  height: 78px;
+  width: 78px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.slider__personal {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 1.8rem;
+  margin-left: 30px;
+}
+
+.slider__personal__name {
+  font-weight: bold;
+}
+
+.slider__arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  font-size: 1.8rem;
+}
+
+.slider__arrows::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 75%;
+  width: 2px;
+  background-color: #DEE1E6;
+}
+
+.slider__arrow {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  color: #2500F9;
+  background-color: #EFF3F8;
+  border: 2px solid #EFF3F8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider__arrow:hover {
+  background-color: #2500F9;
+  color: #DEE1E6;
+}
+
+.slider__arrow--left {
+  margin-right: 35px;
+}
+
 @media (max-width: 1450px) {
   .container {
     max-width: 1200px;
@@ -736,6 +962,9 @@ body, html {
 }
 
 @media (max-width: 1280px) {
+  .nav {
+    margin: 0 40px;
+  }
   .jackpots {
     margin: 130px 0;
   }
@@ -863,7 +1092,7 @@ body, html {
   }
 }
 
-@media (max-width: 854px) {
+@media (max-width: 875px) {
   .companies__imgs__img img {
     width: 100px;
   }
@@ -1009,6 +1238,28 @@ body, html {
   .ultimate__imgs img:nth-of-type(1) {
     margin-right: -30%;
   }
+  .pricing__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .pricing__cards__card {
+    margin-bottom: 20px;
+  }
+  .pricing__cards__card:first-of-type {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .pricing__cards__card:last-of-type {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1043,6 +1294,9 @@ body, html {
 }
 
 @media (max-width: 640px) {
+  .nav .container {
+    padding: 20px 0;
+  }
   .jackpots .container {
     padding: 0 0 0 50px;
   }
@@ -1137,6 +1391,12 @@ body, html {
     font-size: 2.8rem;
   }
   .items-awards__item__title__description {
+    font-size: 1.4rem;
+  }
+  .pricing__title {
+    font-size: 3rem;
+  }
+  .pricing__description {
     font-size: 1.4rem;
   }
 }

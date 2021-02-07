@@ -1,0 +1,116 @@
+.testimonial
+    display: flex
+    align-items: center
+    margin-bottom: 200px
+    &__map
+        position: relative
+        flex-basis: 820px
+        // height: 500px
+        flex-shrink: 0
+        // &::before
+        //     content: ''
+        //     position: absolute
+        //     top: 0
+        //     left: 0
+        //     height: 100%
+        //     width: 100%
+        //     background-image: url(../img/people/people-bg.png)
+        //     background-repeat: no-repeat
+        //     opacity: .35
+        &__bg
+            // position: absolute
+            // top: 0
+            // left: 0
+            // height: 100%
+            width: 100%
+            opacity: .35
+        &__person
+            position: absolute
+            &--first
+                top: 15%
+                left: 5%
+                @include circle(70px)
+            &--second
+                top: 34%
+                left: 13%
+                @include circle(70px)
+            &--third
+                top: 45%
+                left: 42%
+                @include circle(90px)
+            &--fourth
+                top: 40%
+                left: 65%
+                @include circle(100px)
+            &--fifth
+                top: 12%
+                left: 70%
+                @include circle(100px)
+            &--sixth
+                top: 3%
+                left: 30%
+                @include circle(70px)
+            &--seventh
+                top: 65%
+                left: 18%
+                @include circle(100px)
+            img
+                @include center_position
+    &__content
+        flex-shrink: 1
+        flex-basis: 600px
+        padding-right: 20px
+    &__title
+        // width: 90%
+        margin-bottom: 30px
+    &__description
+        width: 85%
+
+.opinion
+    &__stars
+        font-size: 2rem
+        margin: 45px 0 30px 0
+    &__title
+        font-size: 2rem
+        margin-bottom: 30px
+    &__slider
+        display: flex
+        align-items: center
+        margin-top: 80px
+
+.slider
+    &__img
+        @include circle(78px)
+    &__personal
+        flex-grow: 1
+        font-size: 1.8rem
+        margin-left: 30px
+        &__name
+            font-weight: bold
+    &__arrows
+        display: flex
+        justify-content: space-between
+        position: relative
+        font-size: 1.8rem
+        &::before
+            content: ''
+            @include center_position
+            height: 75%
+            width: 2px
+            background-color: #DEE1E6
+
+    &__arrow
+        @include circle(50px)
+        color: $blue-color
+        background-color: #EFF3F8
+        border: 2px solid #EFF3F8
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: .2s
+        &:hover
+            background-color: $blue-color
+            color: #DEE1E6
+        &--left
+            margin-right: 35px

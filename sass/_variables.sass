@@ -31,3 +31,15 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2)
     top: $toggle-gutter - $toogle-border
     width: $toggle-width-inside
     height: $toggle-control-size
+
+@mixin circle($diameter)
+    height: $diameter
+    width: $diameter
+    border-radius: 50%
+    overflow: hidden
+
+@mixin center_position
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
