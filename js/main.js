@@ -18,7 +18,7 @@ window.addEventListener('resize', ()=>{
     if(window.innerWidth > 854){
         menu.style.opacity = 1
         menu.classList.remove('active')
-    }  
+    } else setWidthOfPeople()
 })
 
 const mediaQuery = window.matchMedia('(max-width: 768px)')
@@ -57,3 +57,104 @@ switchPricing.addEventListener('change',()=>{
         priceMonth.textContent = "/month"
     }
 })
+
+// MAP
+const peopleImgs = [...document.querySelectorAll('.testimonial__map__person img')]
+const leftArrow = document.querySelector('.slider__arrow--left')
+const rightArrow = document.querySelector('.slider__arrow--right')
+const slides = [...document.querySelectorAll('.opinion')]
+
+setSrcOfImgs = (array) => {
+    array.forEach((item, index) => {
+        item.src = `img/people/person${index+1}.png`
+    })
+}
+setSrcOfImgs (peopleImgs)
+
+getPrevAndNext = () => {
+    const activeSlide = document.querySelector('.opinion.active')
+    const activeIndex = slides.indexOf(activeSlide)
+
+    let nextSlide = slides[activeIndex + 1]
+    let prevSlide = slides[activeIndex - 1]
+
+    return [nextSlide, prevSlide];
+}
+
+getPosition = () => {
+    const activeSlide = document.querySelector('.opinion.active')
+    const activeIndex = slides.indexOf(activeSlide)
+    const [nextSlide, prevSlide] = getPrevAndNext()
+    
+    slides.forEach((slide,index) => {
+        if(index === activeIndex){
+            slide.style.transform = 'translateX(0)'
+        } else if (slide === prevSlide){
+            slide.style.transform = 'translate(-100%)'
+        } else if (slide === nextSlide){
+            slide.style.transform = 'translate(110%)'
+        }
+        // slide.addEventListener('transitioned', () => {
+        //     slide.classList.remove('top');
+        // })
+    })
+}
+
+getNextSlide = () => {
+    const activeSlide = document.querySelector('.opinion.active')
+    const activeIndex = slides.indexOf(activeSlide)
+    const [nextSlide, prevSlide] = getPrevAndNext()
+
+    if (activeIndex === slides.length - 2) {
+        rightArrow.classList.add('disabled')
+
+    }else if (activeIndex === slides.length - 1) {
+        return
+    } else {
+        rightArrow.classList.remove('disabled')
+        leftArrow.classList.remove('disabled')
+    }
+
+    activeSlide.classList.remove('active');
+    activeSlide.style.transform = 'translate(-100%)';
+    nextSlide.classList.add('active');
+    nextSlide.style.transform = 'translateX(0)';
+    getPosition()
+}
+
+getPrevSlide = () => {
+    const activeSlide = document.querySelector('.opinion.active')
+    const activeIndex = slides.indexOf(activeSlide)
+    const [nextSlide, prevSlide] = getPrevAndNext()
+    
+    if (activeIndex === 1) {
+        leftArrow.classList.add('disabled')
+    } else if (activeIndex === 0) {
+        return
+    } else {
+        leftArrow.classList.remove('disabled')
+        rightArrow.classList.remove('disabled')
+    }
+    activeSlide.classList.remove('active');
+    activeSlide.style.transform = 'translate(100%)';
+    prevSlide.classList.add('active');
+    prevSlide.style.transform = 'translateX(0)';
+    getPosition()
+}
+
+leftArrow.addEventListener('click', getPrevSlide)
+rightArrow.addEventListener('click', getNextSlide)
+
+const people = [...document.querySelectorAll('.testimonial__map__person')]
+setWidthOfPeople = (array, percentOfWidth) => {
+    array.forEach( item => {
+        item.style.width = `${window.innerWidth * percentOfWidth}px`
+        item.style.height = `${window.innerWidth * percentOfWidth}px`
+    })
+}
+
+if (window.matchMedia('(max-width: 875px)').matches){
+    setWidthOfPeople(people, 0.12)
+} else if(window.matchMedia('(max-width: 360px)').matches){
+    setWidthOfPeople(people, 0.08)
+}

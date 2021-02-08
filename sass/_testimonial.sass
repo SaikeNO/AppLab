@@ -2,71 +2,71 @@
     display: flex
     align-items: center
     margin-bottom: 200px
+    max-width: 1800px
+    margin: 0 auto
     &__map
         position: relative
-        flex-basis: 820px
-        // height: 500px
+        width: $map-width
         flex-shrink: 0
-        // &::before
-        //     content: ''
-        //     position: absolute
-        //     top: 0
-        //     left: 0
-        //     height: 100%
-        //     width: 100%
-        //     background-image: url(../img/people/people-bg.png)
-        //     background-repeat: no-repeat
-        //     opacity: .35
         &__bg
-            // position: absolute
-            // top: 0
-            // left: 0
-            // height: 100%
             width: 100%
             opacity: .35
         &__person
             position: absolute
+            cursor: pointer
             &--first
                 top: 15%
                 left: 5%
-                @include circle(70px)
+                @include circle($map-width/12)
             &--second
                 top: 34%
                 left: 13%
-                @include circle(70px)
+                @include circle($map-width/13)
             &--third
                 top: 45%
                 left: 42%
-                @include circle(90px)
+                @include circle($map-width/10)
             &--fourth
                 top: 40%
                 left: 65%
-                @include circle(100px)
+                @include circle($map-width/10)
             &--fifth
                 top: 12%
                 left: 70%
-                @include circle(100px)
+                @include circle($map-width/9)
             &--sixth
                 top: 3%
                 left: 30%
-                @include circle(70px)
+                @include circle($map-width/13)
             &--seventh
                 top: 65%
                 left: 18%
-                @include circle(100px)
+                @include circle($map-width/9)
             img
                 @include center_position
     &__content
         flex-shrink: 1
         flex-basis: 600px
         padding-right: 20px
+        overflow: hidden
     &__title
-        // width: 90%
         margin-bottom: 30px
     &__description
         width: 85%
 
 .opinion
+    &__wrapper
+        position: relative
+        height: 400px
+        .opinion
+            transition: .4s
+            position: absolute
+            transform: translateX(120%)
+        &__first
+            transform: translateX(0)
+        .active
+            transform: translateX(0)
+
     &__stars
         font-size: 2rem
         margin: 45px 0 30px 0
@@ -76,7 +76,7 @@
     &__slider
         display: flex
         align-items: center
-        margin-top: 80px
+        // margin-top: 80px
 
 .slider
     &__img
