@@ -90,9 +90,9 @@ getPosition = () => {
         if(index === activeIndex){
             slide.style.transform = 'translateX(0)'
         } else if (slide === prevSlide){
-            slide.style.transform = 'translate(-100%)'
+            slide.style.transform = 'translate(-130%)'
         } else if (slide === nextSlide){
-            slide.style.transform = 'translate(110%)'
+            slide.style.transform = 'translate(130%)'
         }
         // slide.addEventListener('transitioned', () => {
         //     slide.classList.remove('top');
@@ -116,7 +116,7 @@ getNextSlide = () => {
     }
 
     activeSlide.classList.remove('active');
-    activeSlide.style.transform = 'translate(-100%)';
+    activeSlide.style.transform = 'translate(-130%)';
     nextSlide.classList.add('active');
     nextSlide.style.transform = 'translateX(0)';
     getPosition()
@@ -136,7 +136,7 @@ getPrevSlide = () => {
         rightArrow.classList.remove('disabled')
     }
     activeSlide.classList.remove('active');
-    activeSlide.style.transform = 'translate(100%)';
+    activeSlide.style.transform = 'translate(130%)';
     prevSlide.classList.add('active');
     prevSlide.style.transform = 'translateX(0)';
     getPosition()

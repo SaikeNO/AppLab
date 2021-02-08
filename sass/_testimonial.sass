@@ -1,9 +1,9 @@
 .testimonial
     display: flex
     align-items: center
-    margin-bottom: 200px
     max-width: 1800px
     margin: 0 auto
+    margin-bottom: 200px
     &__map
         position: relative
         width: $map-width
@@ -46,7 +46,7 @@
                 @include center_position
     &__content
         flex-shrink: 1
-        flex-basis: 600px
+        max-width: 600px
         padding-right: 20px
         overflow: hidden
     &__title
@@ -59,7 +59,7 @@
         position: relative
         height: 400px
         .opinion
-            transition: .4s
+            transition: .4s ease-out
             position: absolute
             transform: translateX(120%)
         &__first
