@@ -62,14 +62,52 @@ switchPricing.addEventListener('change',()=>{
 const peopleImgs = [...document.querySelectorAll('.testimonial__map__person img')]
 const leftArrow = document.querySelector('.slider__arrow--left')
 const rightArrow = document.querySelector('.slider__arrow--right')
+const sliderImg = document.querySelector('.slider__img img');
+const sliderPersonalTitle = document.querySelector('.slider__personal__name .name__title');
+const sliderPersonalFirst = document.querySelector('.slider__personal__name .name__first');
+const sliderPersonalLast = document.querySelector('.slider__personal__name .name__last');
+const sliderPersonalProff = document.querySelector('.slider__personal__proffesion');
 const slides = [...document.querySelectorAll('.opinion')]
 
-setSrcOfImgs = (array) => {
-    array.forEach((item, index) => {
-        item.src = `img/people/person${index+1}.png`
-    })
+async function fetchRandomUsers(url = ''){
+    const users = await fetch(url)
+        .then(response => {
+                if(response.ok){
+                    return response
+                } else {
+                    throw Error(response.status)
+                }
+            })
+        .then(response => response.json())
+        .then(response => response.results)
+        .catch(error => console.log(error + " coś nie tak"))
+    return users
 }
-setSrcOfImgs (peopleImgs)
+
+async function setRandomUsers() {
+    const users = await fetchRandomUsers('https://randomuser.me/api/?results=7')
+
+    const imgs = users.map(user => user.picture.medium)
+    const name = users[0].name
+
+    peopleImgs.forEach((item, index) => {
+        item.src = imgs[index]
+    })
+    sliderImg.src = imgs[0]
+    console.log(users[0])
+    sliderPersonalTitle.textContent = name.title
+    sliderPersonalFirst.textContent = name.first
+    sliderPersonalLast.textContent = name.last
+    sliderPersonalProff.textContent = users[0].location.city
+
+}
+setRandomUsers ()
+
+peopleImgs.forEach((person, index)=>{
+    person.addEventListener('click', function(){
+        sliderImg.src = this.src
+    })
+})
 
 getPrevAndNext = () => {
     const activeSlide = document.querySelector('.opinion.active')
@@ -94,9 +132,6 @@ getPosition = () => {
         } else if (slide === nextSlide){
             slide.style.transform = 'translate(130%)'
         }
-        // slide.addEventListener('transitioned', () => {
-        //     slide.classList.remove('top');
-        // })
     })
 }
 
@@ -158,3 +193,30 @@ if (window.matchMedia('(max-width: 875px)').matches){
 } else if(window.matchMedia('(max-width: 360px)').matches){
     setWidthOfPeople(people, 0.08)
 }
+
+
+
+
+// // Example POST method implementation:
+// async function postData(url = '', data = {}) {
+//   // Default options are marked with *
+//   const response = await fetch(url, {
+//     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+//     mode: 'cors', // no-cors, *cors, same-origin
+//     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+//     credentials: 'same-origin', // include, *same-origin, omit
+//     headers: {
+//       'Content-Type': 'application/json'
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     redirect: 'follow', // manual, *follow, error
+//     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+//     body: JSON.stringify(data) // body data type must match "Content-Type" header
+//   });
+//   return response.json(); // parses JSON response into native JavaScript objects
+// }
+
+// postData('https://example.com/answer', { answer: 42 })
+//   .then(data => {
+//     console.log(data); // JSON data parsed by `data.json()` call
+//   });

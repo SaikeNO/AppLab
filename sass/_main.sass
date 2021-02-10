@@ -20,13 +20,17 @@ body,html
     display: inline-block
     background-color: $blue-color
     color: #fff !important
-    padding: 18px 30px !important
-    border-radius: 30px
+    padding: 14px 30px !important
+    border-radius: 40px
     font-weight: 600
     margin-left: 30px
-    border: none !important
+    border: 3px solid $blue-color !important
     text-decoration: none
     cursor: pointer
+    transition: .3s
+    &:hover
+        background-color: transparent
+        color: $blue-color !important
 
 .more-items
     padding: 15px 18px !important

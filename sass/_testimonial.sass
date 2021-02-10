@@ -17,31 +17,31 @@
             &--first
                 top: 15%
                 left: 5%
-                @include circle($map-width/12)
+                @include circle($map-width/12.5)
             &--second
                 top: 34%
                 left: 13%
-                @include circle($map-width/13)
+                @include circle($map-width/12.5)
             &--third
                 top: 45%
                 left: 42%
-                @include circle($map-width/10)
+                @include circle($map-width/12.5)
             &--fourth
                 top: 40%
                 left: 65%
-                @include circle($map-width/10)
+                @include circle($map-width/12.5)
             &--fifth
                 top: 12%
                 left: 70%
-                @include circle($map-width/9)
+                @include circle($map-width/12.5)
             &--sixth
                 top: 3%
                 left: 30%
-                @include circle($map-width/13)
+                @include circle($map-width/12.5)
             &--seventh
                 top: 65%
                 left: 18%
-                @include circle($map-width/9)
+                @include circle($map-width/12.5)
             img
                 @include center_position
     &__content
@@ -81,6 +81,9 @@
 .slider
     &__img
         @include circle(78px)
+        img
+            width: 100%
+            height: 100%
     &__personal
         flex-grow: 1
         font-size: 1.8rem
@@ -114,3 +117,6 @@
             color: #DEE1E6
         &--left
             margin-right: 35px
+.name
+    &__title
+        font-size: inherit
