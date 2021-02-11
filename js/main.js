@@ -272,3 +272,15 @@ if (window.matchMedia('(max-width: 875px)').matches){
 }
 
 
+// FAQ
+const questions = [...document.querySelectorAll('.faq .question')]
+
+questions.forEach(question => {
+    question.addEventListener('click', function(){
+        const activeQuestion = document.querySelector('.question--active')
+        activeQuestion.classList.remove('question--active')
+        this.classList.toggle('question--active')
+        
+        
+    })
+})

@@ -209,7 +209,10 @@
             transform: rotate(0deg) scale(0.2, 0.2)
         & ~ .main__nav__burger span:nth-child(3)
             transform: rotate(-45deg) translate(0, -1px)
-
+    .faq .question--active
+        height: 350px
+    .faq .question
+        padding: 25px 30px
 @media  ( max-width: 768px )
     .features__img
         display: none
@@ -241,6 +244,8 @@
                 order: 2
             &:last-of-type
                 order: 1
+    .faq .question.question--active
+        height: 400px
 @media ( max-width: 700px )
     .header .container
         flex-direction: column
@@ -282,6 +287,19 @@
         padding-top: 50px
     .testimonial__title
         font-size: 3rem
+    .faq__header__title
+        font-size: 3rem
+    .faq__header__description
+        font-size: 1.4rem
+    .faq .question__title
+        font-size: 1.8rem
+    .faq__header
+        max-width: 100%
+@media ( max-width: 580px )
+    .faq .question
+        height: 95px
+    .faq .question.question--active
+        height: 500px
 
 @media (max-width: 533px)
     .features__text
@@ -333,6 +351,9 @@
             margin-top: 20px
     .opinion__wrapper
         height: 450px
+    .faq .question.question--active
+        height: 660px
+
 @media ( max-width: 375px )
     .welcome-text
         &__title
@@ -345,6 +366,8 @@
         padding: 20px
     .opinion__wrapper
         height: 500px
+    .faq .question.question--active
+        height: 110vh
 
 @media ( max-width: 320px )
     .main__nav__elem
