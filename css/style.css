@@ -877,18 +877,8 @@ body, html {
   -webkit-transition: .4s ease-out;
   transition: .4s ease-out;
   position: absolute;
-  -webkit-transform: translateX(120%);
-          transform: translateX(120%);
-}
-
-.opinion__wrapper__first {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-.opinion__wrapper .active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(130%);
+          transform: translateX(130%);
 }
 
 .opinion__stars {
@@ -915,6 +905,8 @@ body, html {
   width: 78px;
   border-radius: 50%;
   overflow: hidden;
+  -ms-flex-preferred-size: 78px;
+      flex-basis: 78px;
 }
 
 .slider__img img {

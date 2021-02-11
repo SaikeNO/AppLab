@@ -1,3 +1,4 @@
+// BURGER MENU
 const burger = document.querySelector('.main__nav__burger');
 const menu = document.querySelector('.main__nav__ul')
 
@@ -9,7 +10,7 @@ burger.addEventListener('click', ()=>{
         menu.style.opacity = 0
     }
 })
-
+// HIDE MENU FOR WIDE SCALE
 const whyUsSection = document.querySelector('.items-awards')
 const whyUsItem = document.querySelector('.items-awards__item')
 const moreBtn = document.querySelector('.more-items .btn')
@@ -20,7 +21,7 @@ window.addEventListener('resize', ()=>{
         menu.classList.remove('active')
     } else setWidthOfPeople()
 })
-
+// BUTTON RESIZE HEIGHT WHYUSSECTION
 const mediaQuery = window.matchMedia('(max-width: 768px)')
 if(mediaQuery.matches){
     whyUsSection.style.height = `${whyUsItem.clientHeight}px`
@@ -43,7 +44,7 @@ moreBtn.addEventListener('click', ()=>{
     }
 })
 
-// Pricing
+// SWITCH PRICING
 const switchPricing = document.querySelector(".pricing__switch-button input")
 const priceParagraph = document.querySelector('.pricing__cards__card--pro .price')
 const priceMonth = document.querySelector('.pricing__cards__card--pro .price__month')
@@ -63,10 +64,8 @@ const peopleImgs = [...document.querySelectorAll('.testimonial__map__person img'
 const leftArrow = document.querySelector('.slider__arrow--left')
 const rightArrow = document.querySelector('.slider__arrow--right')
 const sliderImg = document.querySelector('.slider__img img');
-const sliderPersonalTitle = document.querySelector('.slider__personal__name .name__title');
-const sliderPersonalFirst = document.querySelector('.slider__personal__name .name__first');
-const sliderPersonalLast = document.querySelector('.slider__personal__name .name__last');
-const sliderPersonalProff = document.querySelector('.slider__personal__proffesion');
+const sliderPersonalName = document.querySelector('.slider__personal__name');
+const sliderPersonalCity = document.querySelector('.slider__personal__city');
 const slides = [...document.querySelectorAll('.opinion')]
 
 async function fetchRandomUsers(url = ''){
@@ -91,54 +90,94 @@ async function setRandomUsers() {
     const name = users[0].name
 
     peopleImgs.forEach((item, index) => {
+        const name = users[index].name
+        const city = users[index].location.city
+
         item.src = imgs[index]
+        item.setAttribute(`data-id`, index)
+        item.setAttribute(`data-city`, city)
+        item.setAttribute(`alt`, `${name.title} ${name.first} ${name.last}`)
     })
     sliderImg.src = imgs[0]
-    console.log(users[0])
-    sliderPersonalTitle.textContent = name.title
-    sliderPersonalFirst.textContent = name.first
-    sliderPersonalLast.textContent = name.last
-    sliderPersonalProff.textContent = users[0].location.city
+    sliderPersonalName.textContent = peopleImgs[0].getAttribute('alt')
+    sliderPersonalCity.textContent = users[0].location.city
 
+    slides[0].style.transform = 'translateX(0px)'
 }
-setRandomUsers ()
+setRandomUsers()
 
-peopleImgs.forEach((person, index)=>{
-    person.addEventListener('click', function(){
-        sliderImg.src = this.src
+
+// HANDLE MAP IMGS NOT FINISHED
+handleMapImgs = () => {
+    peopleImgs.forEach(person=>{
+        person.addEventListener('click', function(){
+            const activePerson = document.querySelector('.testimonial__map__person .active');
+
+            // SYNCHRO ACTIVE PERSON AND OPINION
+            // activePerson.classList.remove('active');
+            // activeSlide.classList.remove('active');
+            // this.classList.add('active');
+            // slides[this.dataset.id].classList.add('active');
+            
+            // // SET CORRETC OPINION
+            // const [nextSlide,prevSlide] = getPrevAndNext()
+            // // debugger
+            // if (prevSlide != undefined){
+            //     prevSlide.style.transform = 'translateX(-130%)'
+            // }
+            // activeSlide.style.transform = 'translateX(0)';
+            // if (nextSlide !=undefined) {
+            //     nextSlide.style.transform = 'translateX(130%)';
+            // }
+            const activeSlide = document.querySelector('.opinion.active')
+            const activeIndex = slides.indexOf(activeSlide)
+            const [nextSlide,prevSlide] = getPrevAndNext()
+
+            if (activeIndex === slides.length - 2) {
+                rightArrow.classList.add('disabled')
+
+            }else if (activeIndex === slides.length - 1) {
+                return
+            } else {
+                leftArrow.classList.remove('disabled')
+            }
+
+            activeSlide.classList.remove('active');
+            activeSlide.style.transform = 'translateX(-130%)';
+            if (prevSlide != undefined){
+                prevSlide.style.transform = 'translateX(-130%)'
+            }
+            nextSlide.classList.add('active');
+            nextSlide.style.transform = 'translateX(0)';
+
+            // SET DATA IN SLIDER
+            sliderImg.src = this.src;
+            sliderPersonalName.textContent = this.getAttribute('alt');
+            sliderPersonalCity.textContent = this.dataset.city;
+        })
     })
-})
+}
+
+// handleMapImgs() 
+
 
 getPrevAndNext = () => {
     const activeSlide = document.querySelector('.opinion.active')
-    const activeIndex = slides.indexOf(activeSlide)
+    const activeSlideIndex = slides.indexOf(activeSlide)
+    const activePerson = document.querySelector('.testimonial__map__person .active')
+    const activePersonIndex = peopleImgs.indexOf(activePerson)
 
-    let nextSlide = slides[activeIndex + 1]
-    let prevSlide = slides[activeIndex - 1]
-
-    return [nextSlide, prevSlide];
-}
-
-getPosition = () => {
-    const activeSlide = document.querySelector('.opinion.active')
-    const activeIndex = slides.indexOf(activeSlide)
-    const [nextSlide, prevSlide] = getPrevAndNext()
-    
-    slides.forEach((slide,index) => {
-        if(index === activeIndex){
-            slide.style.transform = 'translateX(0)'
-        } else if (slide === prevSlide){
-            slide.style.transform = 'translate(-130%)'
-        } else if (slide === nextSlide){
-            slide.style.transform = 'translate(130%)'
-        }
-    })
+    const nextSlide = slides[activeSlideIndex + 1]
+    const prevSlide = slides[activeSlideIndex - 1]
+    const nextPerson = peopleImgs[activePersonIndex + 1]
+    const prevPerson = peopleImgs[activePersonIndex - 1]
+    return [nextSlide, prevSlide, nextPerson, prevPerson];
 }
 
 getNextSlide = () => {
     const activeSlide = document.querySelector('.opinion.active')
     const activeIndex = slides.indexOf(activeSlide)
-    const [nextSlide, prevSlide] = getPrevAndNext()
+    const [nextSlide,prevSlide] = getPrevAndNext()
 
     if (activeIndex === slides.length - 2) {
         rightArrow.classList.add('disabled')
@@ -146,21 +185,19 @@ getNextSlide = () => {
     }else if (activeIndex === slides.length - 1) {
         return
     } else {
-        rightArrow.classList.remove('disabled')
         leftArrow.classList.remove('disabled')
     }
 
     activeSlide.classList.remove('active');
-    activeSlide.style.transform = 'translate(-130%)';
+    activeSlide.style.transform = 'translateX(-130%)';
     nextSlide.classList.add('active');
     nextSlide.style.transform = 'translateX(0)';
-    getPosition()
 }
 
 getPrevSlide = () => {
     const activeSlide = document.querySelector('.opinion.active')
     const activeIndex = slides.indexOf(activeSlide)
-    const [nextSlide, prevSlide] = getPrevAndNext()
+    const [ nextSlide, prevSlide] = getPrevAndNext()
     
     if (activeIndex === 1) {
         leftArrow.classList.add('disabled')
@@ -171,14 +208,54 @@ getPrevSlide = () => {
         rightArrow.classList.remove('disabled')
     }
     activeSlide.classList.remove('active');
-    activeSlide.style.transform = 'translate(130%)';
+    activeSlide.style.transform = 'translateX(130%)';
     prevSlide.classList.add('active');
     prevSlide.style.transform = 'translateX(0)';
-    getPosition()
+    
 }
 
-leftArrow.addEventListener('click', getPrevSlide)
-rightArrow.addEventListener('click', getNextSlide)
+getPrevOrNextPerson = (nextOrPrev) => {
+    const activePerson = document.querySelector('.testimonial__map__person .active')
+    const activePersonIndex = peopleImgs.indexOf(activePerson)
+
+    const [nextSlide, prevSlide, nextPerson, prevPerson] = getPrevAndNext()
+    if (nextOrPrev === 'next') {
+        if ( activePersonIndex === peopleImgs.length - 1) return
+        activePerson.classList.remove('active')
+        nextPerson.classList.add('active')
+    } else if(nextOrPrev === 'prev'){
+        if ( activePersonIndex === 0) return
+        activePerson.classList.remove('active')
+        prevPerson.classList.add('active')
+    } else {
+        throw Error("Invalid property nextOrPrev")
+    }
+    
+}   
+
+setPrevOrNextPerson = () => {
+    const activePerson = document.querySelector('.testimonial__map__person .active')
+    const personID = parseInt(activePerson.dataset.id)
+    sliderImg.src = activePerson.src
+    sliderPersonalName.textContent = activePerson.getAttribute('alt')
+    sliderPersonalCity.textContent = activePerson.dataset.city
+}
+
+handleLeftArrow = () => {
+    getPrevSlide()
+    getPrevOrNextPerson('prev')
+    setPrevOrNextPerson()
+
+}
+
+handleRightArrow = () => {
+    getNextSlide()
+    getPrevOrNextPerson('next')
+    setPrevOrNextPerson()
+}
+
+leftArrow.addEventListener('click', handleLeftArrow)
+rightArrow.addEventListener('click', handleRightArrow)
 
 const people = [...document.querySelectorAll('.testimonial__map__person')]
 setWidthOfPeople = (array, percentOfWidth) => {
@@ -195,28 +272,3 @@ if (window.matchMedia('(max-width: 875px)').matches){
 }
 
 
-
-
-// // Example POST method implementation:
-// async function postData(url = '', data = {}) {
-//   // Default options are marked with *
-//   const response = await fetch(url, {
-//     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-//     mode: 'cors', // no-cors, *cors, same-origin
-//     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-//     credentials: 'same-origin', // include, *same-origin, omit
-//     headers: {
-//       'Content-Type': 'application/json'
-//       // 'Content-Type': 'application/x-www-form-urlencoded',
-//     },
-//     redirect: 'follow', // manual, *follow, error
-//     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-//     body: JSON.stringify(data) // body data type must match "Content-Type" header
-//   });
-//   return response.json(); // parses JSON response into native JavaScript objects
-// }
-
-// postData('https://example.com/answer', { answer: 42 })
-//   .then(data => {
-//     console.log(data); // JSON data parsed by `data.json()` call
-//   });
