@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="css/style.css">
@@ -51,19 +52,19 @@
         <div class="container">
             <h2 class="companies__title">Trusted by companies like</h2>
             <div class="companies__imgs">
-                <div class="companies__imgs__img">
+                <div data-aos="fade-up" class="companies__imgs__img">
                     <img src="img/companies/1.png" alt="southnest company">
                 </div>
-                <div class="companies__imgs__img">
+                <div data-aos="fade-up" data-aos-delay="50" class="companies__imgs__img">
                     <img src="img/companies/2.png" alt="anubis entertainment">
                 </div>
-                <div class="companies__imgs__img">
+                <div data-aos="fade-up" data-aos-delay="100" class="companies__imgs__img">
                     <img src="img/companies/3.png" alt="alonzo casseta">
                 </div>
-                <div class="companies__imgs__img">
+                <div data-aos="fade-up" data-aos-delay="150" class="companies__imgs__img">
                     <img src="img/companies/4.png" alt="premium express">
                 </div>
-                <div class="companies__imgs__img">
+                <div data-aos="fade-up" data-aos-delay="200" class="companies__imgs__img">
                     <img src="img/companies/5.png" alt="maniac">
                 </div>
             </div>
@@ -80,7 +81,7 @@
                     <p class="features__text__title__description">Increase productivity with a simple to-do app. app for managing your personal budgets.</p>
                 </div>
                 <div class="items-apps">
-                    <div class="items-apps__item items-apps__item--red">
+                    <div data-aos="fade-left" class="items-apps__item items-apps__item--red">
                         <div class="items-apps__img">
                             <img src="img/features/speed.png" alt="speed">
                         </div>
@@ -89,7 +90,7 @@
                             <p class="items-apps__title__description">Get your blood tests delivered at home collect a sample from the news your blood tests.</p>
                         </div>
                     </div>
-                    <div class="items-apps__item items-apps__item--blue">
+                    <div data-aos="fade-left" class="items-apps__item items-apps__item--blue">
                         <div class="items-apps__img">
                             <img src="img/features/prototyping.png" alt="prototyping">
                         </div>
@@ -98,7 +99,7 @@
                             <p class="items-apps__title__description">Get your blood tests delivered at home collect a sample from the news your blood tests.</p>
                         </div>
                     </div>
-                    <div class="items-apps__item items-apps__item--green">
+                    <div data-aos="fade-left" class="items-apps__item items-apps__item--green">
                         <div class="items-apps__img">
                             <img src="img/features/vector.png" alt="vector editing">
                         </div>
@@ -118,7 +119,7 @@
                 <p class="jackpots__title__description">The rise of mobile devices transforms the way we consume information entirely and the world's most elevant channels such as Facebook.</p>
             </div>
             <div class="items-apps--row">
-                <div class="items-apps__item items-apps__item--red items-apps__item--jackpots">
+                <div data-aos="fade-up"  class="items-apps__item items-apps__item--red items-apps__item--jackpots">
                     <div class="items-apps__img">
                         <img src="img/jackpots/bill.png" alt="bill">
                     </div>
@@ -127,7 +128,7 @@
                         <p class="items-apps__title__description items-apps__title__description--row">Get your blood tests delivered at home collect a sample from the news your blood tests.</p>
                     </div>
                 </div>
-                <div class="items-apps__item items-apps__item--blue items-apps__item--jackpots">
+                <div data-aos="fade-up" data-aos-delay="50" class="items-apps__item items-apps__item--blue items-apps__item--jackpots">
                     <div class="items-apps__img">
                         <img src="img/jackpots/network.png" alt="network">
                     </div>
@@ -136,7 +137,7 @@
                         <p class="items-apps__title__description items-apps__title__description--row">Get your blood tests delivered at home collect a sample from the news your blood tests.</p>
                     </div>
                 </div>
-                <div class="items-apps__item items-apps__item--green items-apps__item--jackpots">
+                <div data-aos="fade-up" data-aos-delay="100" class="items-apps__item items-apps__item--green items-apps__item--jackpots">
                     <div class="items-apps__img">
                         <img src="img/jackpots/badge.png" alt="badge">
                     </div>
@@ -292,7 +293,7 @@
                     <span class="control"></span>
                 </label >
                 <div class="pricing__cards">
-                    <div class="pricing__cards__card">
+                    <div data-aos="flip-left"  class="pricing__cards__card">
                         <p class="price">$0<span class="price__month">/month</span> </p>
                         <p class="level">Business Class</p>
                         <p class="whom">For small teams or office</p>
@@ -304,7 +305,7 @@
                         </ul>
                         <button class="btn">Start free trial</button>
                     </div>
-                    <div class="pricing__cards__card pricing__cards__card--pro">
+                    <div data-aos="flip-left" data-aos-delay="100" class="pricing__cards__card pricing__cards__card--pro">
                         <span class="price">$99</span><span class="price__month">/month</span> 
                         <p class="level">Pro Master</p>
                         <p class="whom">For Best opportunities</p>
@@ -482,6 +483,10 @@
             </div>
         </div>
     </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
