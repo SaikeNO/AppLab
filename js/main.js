@@ -2,11 +2,11 @@
 const burger = document.querySelector('.main__nav__burger');
 const menu = document.querySelector('.main__nav__ul')
 
-burger.addEventListener('click', ()=>{
+burger.addEventListener('click', () => {
     menu.classList.toggle('active')
-    if(menu.classList.contains('active')){
+    if (menu.classList.contains('active')) {
         menu.style.opacity = 1
-    } else{
+    } else {
         menu.style.opacity = 0
     }
 })
@@ -15,25 +15,25 @@ const whyUsSection = document.querySelector('.items-awards')
 const whyUsItem = document.querySelector('.items-awards__item')
 const moreBtn = document.querySelector('.more-items .btn')
 
-window.addEventListener('resize', ()=>{
-    if(window.innerWidth > 854){
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 854) {
         menu.style.opacity = 1
         menu.classList.remove('active')
     } else setWidthOfPeople()
 })
 // BUTTON RESIZE HEIGHT WHYUSSECTION
 const mediaQuery = window.matchMedia('(max-width: 768px)')
-if(mediaQuery.matches){
+if (mediaQuery.matches) {
     whyUsSection.style.height = `${whyUsItem.clientHeight}px`
-    moreBtn.style.display= 'block'
+    moreBtn.style.display = 'block'
 } else {
-    moreBtn.style.display= 'none'
+    moreBtn.style.display = 'none'
     whyUsSection.style.height = 'auto'
 }
 
-moreBtn.addEventListener('click', ()=>{
-    if(whyUsSection.style.height === `${whyUsItem.clientHeight}px`){
-        whyUsSection.style.height = `${whyUsItem.clientHeight*6}px`
+moreBtn.addEventListener('click', () => {
+    if (whyUsSection.style.height === `${whyUsItem.clientHeight}px`) {
+        whyUsSection.style.height = `${whyUsItem.clientHeight * 6}px`
     } else {
         whyUsSection.style.height = `${whyUsItem.clientHeight}px`
         window.scroll({
@@ -49,8 +49,8 @@ const switchPricing = document.querySelector(".pricing__switch-button input")
 const priceParagraph = document.querySelector('.pricing__cards__card--pro .price')
 const priceMonth = document.querySelector('.pricing__cards__card--pro .price__month')
 
-switchPricing.addEventListener('change',()=>{
-    if(switchPricing.checked){
+switchPricing.addEventListener('change', () => {
+    if (switchPricing.checked) {
         priceParagraph.textContent = "$899"
         priceMonth.textContent = "/year"
     } else {
@@ -68,15 +68,15 @@ const sliderPersonalName = document.querySelector('.slider__personal__name');
 const sliderPersonalCity = document.querySelector('.slider__personal__city');
 const slides = [...document.querySelectorAll('.opinion')]
 
-async function fetchRandomUsers(url = ''){
+async function fetchRandomUsers(url = '') {
     const users = await fetch(url)
         .then(response => {
-                if(response.ok){
-                    return response
-                } else {
-                    throw Error(response.status)
-                }
-            })
+            if (response.ok) {
+                return response
+            } else {
+                throw Error(response.status)
+            }
+        })
         .then(response => response.json())
         .then(response => response.results)
         .catch(error => console.log(error + " coś nie tak"))
@@ -109,8 +109,8 @@ setRandomUsers()
 
 // HANDLE MAP IMGS NOT FINISHED
 handleMapImgs = () => {
-    peopleImgs.forEach(person=>{
-        person.addEventListener('click', function(){
+    peopleImgs.forEach(person => {
+        person.addEventListener('click', function () {
             const activePerson = document.querySelector('.testimonial__map__person .active');
 
             // SYNCHRO ACTIVE PERSON AND OPINION
@@ -118,7 +118,7 @@ handleMapImgs = () => {
             // activeSlide.classList.remove('active');
             // this.classList.add('active');
             // slides[this.dataset.id].classList.add('active');
-            
+
             // // SET CORRETC OPINION
             // const [nextSlide,prevSlide] = getPrevAndNext()
             // // debugger
@@ -131,12 +131,12 @@ handleMapImgs = () => {
             // }
             const activeSlide = document.querySelector('.opinion.active')
             const activeIndex = slides.indexOf(activeSlide)
-            const [nextSlide,prevSlide] = getPrevAndNext()
+            const [nextSlide, prevSlide] = getPrevAndNext()
 
             if (activeIndex === slides.length - 2) {
                 rightArrow.classList.add('disabled')
 
-            }else if (activeIndex === slides.length - 1) {
+            } else if (activeIndex === slides.length - 1) {
                 return
             } else {
                 leftArrow.classList.remove('disabled')
@@ -144,7 +144,7 @@ handleMapImgs = () => {
 
             activeSlide.classList.remove('active');
             activeSlide.style.transform = 'translateX(-130%)';
-            if (prevSlide != undefined){
+            if (prevSlide != undefined) {
                 prevSlide.style.transform = 'translateX(-130%)'
             }
             nextSlide.classList.add('active');
@@ -177,12 +177,12 @@ getPrevAndNext = () => {
 getNextSlide = () => {
     const activeSlide = document.querySelector('.opinion.active')
     const activeIndex = slides.indexOf(activeSlide)
-    const [nextSlide,prevSlide] = getPrevAndNext()
+    const [nextSlide, prevSlide] = getPrevAndNext()
 
     if (activeIndex === slides.length - 2) {
         rightArrow.classList.add('disabled')
 
-    }else if (activeIndex === slides.length - 1) {
+    } else if (activeIndex === slides.length - 1) {
         return
     } else {
         leftArrow.classList.remove('disabled')
@@ -197,8 +197,8 @@ getNextSlide = () => {
 getPrevSlide = () => {
     const activeSlide = document.querySelector('.opinion.active')
     const activeIndex = slides.indexOf(activeSlide)
-    const [ nextSlide, prevSlide] = getPrevAndNext()
-    
+    const [nextSlide, prevSlide] = getPrevAndNext()
+
     if (activeIndex === 1) {
         leftArrow.classList.add('disabled')
     } else if (activeIndex === 0) {
@@ -211,7 +211,7 @@ getPrevSlide = () => {
     activeSlide.style.transform = 'translateX(130%)';
     prevSlide.classList.add('active');
     prevSlide.style.transform = 'translateX(0)';
-    
+
 }
 
 getPrevOrNextPerson = (nextOrPrev) => {
@@ -220,18 +220,18 @@ getPrevOrNextPerson = (nextOrPrev) => {
 
     const [nextSlide, prevSlide, nextPerson, prevPerson] = getPrevAndNext()
     if (nextOrPrev === 'next') {
-        if ( activePersonIndex === peopleImgs.length - 1) return
+        if (activePersonIndex === peopleImgs.length - 1) return
         activePerson.classList.remove('active')
         nextPerson.classList.add('active')
-    } else if(nextOrPrev === 'prev'){
-        if ( activePersonIndex === 0) return
+    } else if (nextOrPrev === 'prev') {
+        if (activePersonIndex === 0) return
         activePerson.classList.remove('active')
         prevPerson.classList.add('active')
     } else {
         throw Error("Invalid property nextOrPrev")
     }
-    
-}   
+
+}
 
 setPrevOrNextPerson = () => {
     const activePerson = document.querySelector('.testimonial__map__person .active')
@@ -259,15 +259,15 @@ rightArrow.addEventListener('click', handleRightArrow)
 
 const people = [...document.querySelectorAll('.testimonial__map__person')]
 setWidthOfPeople = (array, percentOfWidth) => {
-    array.forEach( item => {
+    array.forEach(item => {
         item.style.width = `${window.innerWidth * percentOfWidth}px`
         item.style.height = `${window.innerWidth * percentOfWidth}px`
     })
 }
 
-if (window.matchMedia('(max-width: 875px)').matches){
+if (window.matchMedia('(max-width: 875px)').matches) {
     setWidthOfPeople(people, 0.12)
-} else if(window.matchMedia('(max-width: 360px)').matches){
+} else if (window.matchMedia('(max-width: 360px)').matches) {
     setWidthOfPeople(people, 0.08)
 }
 
@@ -276,11 +276,7 @@ if (window.matchMedia('(max-width: 875px)').matches){
 const questions = [...document.querySelectorAll('.faq .question')]
 
 questions.forEach(question => {
-    question.addEventListener('click', function(){
-        const activeQuestion = document.querySelector('.question--active')
-        activeQuestion.classList.remove('question--active')
+    question.addEventListener('click', function () {
         this.classList.toggle('question--active')
-        
-        
     })
 })

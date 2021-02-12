@@ -61,7 +61,12 @@
     .items-awards__item--ultimate
         padding: 20px
         flex-basis: 390px
-
+    .download
+        flex-direction: column
+        &__content
+            width: 70%
+            text-align: center
+            padding: 0
 @media ( max-width: 1024px )
     .main__nav__elem--link
         font-size: 1.4rem
@@ -150,7 +155,11 @@
     .testimonial__map__person
         img
             width: 140%
-
+    .download__bg
+        img
+            width: 100%
+    .download__title
+        font-size: 4rem
 //NAVI
 @media ( max-width: 854px )
     .main__nav__ul
@@ -295,6 +304,8 @@
         font-size: 1.8rem
     .faq__header
         max-width: 100%
+    .download__content
+        width: 90%
 @media ( max-width: 580px )
     .faq .question
         height: 95px
@@ -353,7 +364,18 @@
         height: 450px
     .faq .question.question--active
         height: 660px
-
+    .download__img
+        display: block
+        margin: 0
+    .download__img:first-of-type
+        margin: 0 0 10px 0
+    .footer__nav__ul
+        flex-direction: column
+        margin-top: 20px
+    .footer__nav__elem
+        width: 30%
+    .footer
+        padding-bottom: 10px
 @media ( max-width: 375px )
     .welcome-text
         &__title
@@ -368,7 +390,10 @@
         height: 500px
     .faq .question.question--active
         height: 110vh
-
+    .download__title
+        font-size: 2.5rem
+    .download__description
+        font-size: 1.4rem
 @media ( max-width: 320px )
     .main__nav__elem
         padding: 15px
