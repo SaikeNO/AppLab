@@ -1,7 +1,7 @@
 @media ( max-width: 1450px )
     .container
         max-width: 1200px
-    .items-apps__title__description
+    .items-apps__description
         width: 80%
     .features__text__title__h2
         width: auto
@@ -84,41 +84,36 @@
     .features__img
         img
             width: 400px
-    .items-apps__title
-        &__h3
-            font-size: 1.7rem
-        &__description
-            font-size: 1.4rem
-    .jackpots__title
-        &__h2
-            font-size: 3rem
-        &__description
-            font-size: 1.4rem
+    .items-apps__title__h3
+        font-size: 1.7rem
+    .items-apps__description
+        font-size: 1.4rem
+    .jackpots__title__h2
+        font-size: 3rem
+    .jackpots__title__description
+        font-size: 1.4rem
     .designed__img
         img
             width: 380px
     .designed__title
         &__h2
             font-size: 3rem
-    .designed__title
-        &__description
-            font-size: 1.4rem
+    .designed__description
+        font-size: 1.4rem
     .jackpots
         margin-bottom: 100px
         &__title
             margin-bottom: 30px
     .designed
         margin: 50px 0
-    .why-us__title
-        &__h3
-            font-size: 3rem
-        &__description
-            font-size: 1.4rem
-    .why-us__items-apps__item__title
-        &__h4
-            font-size: 1.7rem
-        &__description
-            font-size: 1.4rem
+    .why-us__title__h3
+        font-size: 3rem
+    .why-us__title__description
+        font-size: 1.4rem
+    .why-us__items-apps__item__title__h4
+        font-size: 1.7rem
+    .why-us__items-apps__item__description
+        font-size: 1.4rem
 @media ( max-width: 960px )
     .designed .container
         margin: 0 70px
@@ -133,10 +128,9 @@
     .features__text__title
         &__h2
             font-size: 3rem
-    .features__text__title
-        &__description
-            font-size: 1.4rem
-            margin: 10px 0 20px
+    .features__text__description
+        font-size: 1.4rem
+        margin: 10px 0 20px
     .items-apps__item
         padding: 10px 0
     .jackpots
@@ -306,6 +300,14 @@
         max-width: 100%
     .download__content
         width: 90%
+
+@media (orientation: landscape) and ( max-width: 640px )
+    .main__nav__elem
+        padding: 10px
+        &--link
+            font-size: 2rem !important
+    .main__nav__ul
+        padding: 20px 0
 @media ( max-width: 580px )
     .faq .question
         height: 95px
@@ -338,7 +340,7 @@
         text-align: center
         .items-apps__img
             margin: 0 0 20px 0
-    .items-apps__title__description
+    .items-apps__description
         width: auto
     .designed .container
         margin: 0 20px
@@ -346,7 +348,7 @@
         width: 80%
     .ultimate__text__title__h3
         font-size: 2.8rem
-    .items-awards__item__title__description
+    .items-awards__item__description
         font-size: 1.4rem
     .pricing__title
         font-size: 3rem
@@ -415,3 +417,5 @@
         display: block
     .welcome-text
         padding-left: 0
+    .faq .question
+        height: 120px

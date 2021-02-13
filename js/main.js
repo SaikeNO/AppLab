@@ -10,6 +10,30 @@ burger.addEventListener('click', () => {
         menu.style.opacity = 0
     }
 })
+// SCROLL TO PRICING SECTION
+const tryBtns = document.querySelectorAll('.try-free')
+const pricingSection = document.querySelector('.pricing')
+tryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        window.scroll({
+            top: pricingSection.offsetTop - 50,
+            left: 0,
+            behavior: 'smooth',
+        })
+    })
+})
+
+// SCROLL TO FEATURES
+const learnMoreBtn = document.querySelector('.designed .btn')
+const ultimateSection = document.querySelector('.ultimate')
+learnMoreBtn.addEventListener('click', () => {
+    window.scroll({
+        top: ultimateSection.offsetTop - 50,
+        left: 0,
+        behavior: 'smooth',
+    })
+})
+
 // HIDE MENU FOR WIDE SCALE
 const whyUsSection = document.querySelector('.items-awards')
 const whyUsItem = document.querySelector('.items-awards__item')
@@ -19,7 +43,7 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > 854) {
         menu.style.opacity = 1
         menu.classList.remove('active')
-    } else setWidthOfPeople()
+    } // else setWidthOfPeople()
 })
 // BUTTON RESIZE HEIGHT WHYUSSECTION
 const mediaQuery = window.matchMedia('(max-width: 768px)')
@@ -94,13 +118,13 @@ async function setRandomUsers() {
         const city = users[index].location.city
 
         item.src = imgs[index]
-        item.setAttribute(`data-id`, index)
-        item.setAttribute(`data-city`, city)
-        item.setAttribute(`alt`, `${name.title} ${name.first} ${name.last}`)
+        item.dataset.id = index
+        item.dataset.city = city
+        item.alt = `${name.title} ${name.first} ${name.last}`
     })
     sliderImg.src = imgs[0]
-    sliderPersonalName.textContent = peopleImgs[0].getAttribute('alt')
-    sliderPersonalCity.textContent = users[0].location.city
+    sliderPersonalName.textContent = peopleImgs[0].alt
+    sliderPersonalCity.textContent = peopleImgs[0].dataset.city
 
     slides[0].style.transform = 'translateX(0px)'
 }
@@ -177,7 +201,7 @@ getPrevAndNext = () => {
 getNextSlide = () => {
     const activeSlide = document.querySelector('.opinion.active')
     const activeIndex = slides.indexOf(activeSlide)
-    const [nextSlide, prevSlide] = getPrevAndNext()
+    const [nextSlide] = getPrevAndNext()
 
     if (activeIndex === slides.length - 2) {
         rightArrow.classList.add('disabled')
@@ -197,7 +221,7 @@ getNextSlide = () => {
 getPrevSlide = () => {
     const activeSlide = document.querySelector('.opinion.active')
     const activeIndex = slides.indexOf(activeSlide)
-    const [nextSlide, prevSlide] = getPrevAndNext()
+    const [, prevSlide] = getPrevAndNext()
 
     if (activeIndex === 1) {
         leftArrow.classList.add('disabled')
@@ -218,7 +242,7 @@ getPrevOrNextPerson = (nextOrPrev) => {
     const activePerson = document.querySelector('.testimonial__map__person .active')
     const activePersonIndex = peopleImgs.indexOf(activePerson)
 
-    const [nextSlide, prevSlide, nextPerson, prevPerson] = getPrevAndNext()
+    const [, , nextPerson, prevPerson] = getPrevAndNext()
     if (nextOrPrev === 'next') {
         if (activePersonIndex === peopleImgs.length - 1) return
         activePerson.classList.remove('active')
@@ -235,9 +259,8 @@ getPrevOrNextPerson = (nextOrPrev) => {
 
 setPrevOrNextPerson = () => {
     const activePerson = document.querySelector('.testimonial__map__person .active')
-    const personID = parseInt(activePerson.dataset.id)
     sliderImg.src = activePerson.src
-    sliderPersonalName.textContent = activePerson.getAttribute('alt')
+    sliderPersonalName.textContent = activePerson.alt
     sliderPersonalCity.textContent = activePerson.dataset.city
 }
 

@@ -12,6 +12,7 @@ body, html {
   background-color: #F9FBFC;
   color: #242F51;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -59,13 +60,13 @@ body, html {
   cursor: initial !important;
 }
 
+[class*='title'] {
+  font-size: 4rem;
+}
+
 [class*='description'] {
   color: #616368;
   font-size: 1.6rem;
-}
-
-[class*='title'] {
-  font-size: 4rem;
 }
 
 .nav .container {
@@ -173,7 +174,7 @@ body, html {
 .welcome-text__certificate {
   background-color: #E2EAED;
   display: inline-block;
-  padding: 4px 20px 4px 0;
+  padding: 6px 20px 6px 0;
   border-radius: 20px;
 }
 
@@ -188,7 +189,6 @@ body, html {
 
 .welcome-text__description {
   width: 80%;
-  color: #616368;
   padding-bottom: 25px;
 }
 
@@ -261,10 +261,8 @@ body, html {
   line-height: 1.3;
 }
 
-.features__text__title__description {
-  font-size: 1.6rem;
+.features__text__description {
   width: 80%;
-  color: #616368;
   margin: 10px 0 50px;
 }
 
@@ -287,13 +285,11 @@ body, html {
   margin-bottom: 20px;
 }
 
-.items-apps__title__description {
-  font-size: 1.6rem;
+.items-apps__description {
   width: 40%;
-  color: #616368;
 }
 
-.items-apps__title__description--row {
+.items-apps__description--row {
   width: 70%;
 }
 
@@ -364,9 +360,7 @@ body, html {
 .jackpots__title__description {
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
-  font-size: 1.6rem;
   padding-left: 50px;
-  color: #616368;
 }
 
 .designed {
@@ -399,8 +393,6 @@ body, html {
 }
 
 .designed__title__description {
-  font-size: 1.6rem;
-  color: #616368;
   margin-bottom: 30px;
   max-width: 500px;
 }
@@ -421,14 +413,11 @@ body, html {
 
 .why-us__title__h3 {
   font-size: 3.6rem;
-  color: #242F51;
   width: 450px;
   margin: 0 auto 35px;
 }
 
 .why-us__title__description {
-  color: #616368;
-  font-size: 1.6rem;
   width: 750px;
   margin: 0 auto;
 }
@@ -531,13 +520,7 @@ body, html {
 
 .ultimate__text__title__h3 {
   font-size: 3.6rem;
-  color: #242F51;
   margin-bottom: 20px;
-}
-
-.ultimate__text__title__description {
-  font-size: 1.6rem;
-  color: #616368;
 }
 
 .ultimate__imgs {
@@ -581,7 +564,6 @@ body, html {
 }
 
 .pricing__description {
-  font-size: 1.6rem;
   margin-bottom: 60px;
 }
 
@@ -1158,7 +1140,7 @@ body, html {
   .container {
     max-width: 1200px;
   }
-  .items-apps__title__description {
+  .items-apps__description {
     width: 80%;
   }
   .features__text__title__h2 {
@@ -1289,7 +1271,7 @@ body, html {
   .items-apps__title__h3 {
     font-size: 1.7rem;
   }
-  .items-apps__title__description {
+  .items-apps__description {
     font-size: 1.4rem;
   }
   .jackpots__title__h2 {
@@ -1304,7 +1286,7 @@ body, html {
   .designed__title__h2 {
     font-size: 3rem;
   }
-  .designed__title__description {
+  .designed__description {
     font-size: 1.4rem;
   }
   .jackpots {
@@ -1325,7 +1307,7 @@ body, html {
   .why-us__items-apps__item__title__h4 {
     font-size: 1.7rem;
   }
-  .why-us__items-apps__item__title__description {
+  .why-us__items-apps__item__description {
     font-size: 1.4rem;
   }
 }
@@ -1346,7 +1328,7 @@ body, html {
   .features__text__title__h2 {
     font-size: 3rem;
   }
-  .features__text__title__description {
+  .features__text__description {
     font-size: 1.4rem;
     margin: 10px 0 20px;
   }
@@ -1611,6 +1593,18 @@ body, html {
   }
 }
 
+@media (orientation: landscape) and (max-width: 640px) {
+  .main__nav__elem {
+    padding: 10px;
+  }
+  .main__nav__elem--link {
+    font-size: 2rem !important;
+  }
+  .main__nav__ul {
+    padding: 20px 0;
+  }
+}
+
 @media (max-width: 580px) {
   .faq .question {
     height: 95px;
@@ -1670,7 +1664,7 @@ body, html {
   .items-apps__item--jackpots .items-apps__img {
     margin: 0 0 20px 0;
   }
-  .items-apps__title__description {
+  .items-apps__description {
     width: auto;
   }
   .designed .container {
@@ -1682,7 +1676,7 @@ body, html {
   .ultimate__text__title__h3 {
     font-size: 2.8rem;
   }
-  .items-awards__item__title__description {
+  .items-awards__item__description {
     font-size: 1.4rem;
   }
   .pricing__title {
@@ -1788,6 +1782,9 @@ body, html {
   }
   .welcome-text {
     padding-left: 0;
+  }
+  .faq .question {
+    height: 120px;
   }
 }
 /*# sourceMappingURL=style.css.map */
