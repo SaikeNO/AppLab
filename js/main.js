@@ -1,15 +1,11 @@
 // BURGER MENU
-const burger = document.querySelector('.main__nav__burger');
-const menu = document.querySelector('.main__nav__ul')
+const burger = document.querySelector('.menu__burger');
+const menu = document.querySelector('.menu__list')
 
 burger.addEventListener('click', () => {
-    menu.classList.toggle('active')
-    if (menu.classList.contains('active')) {
-        menu.style.opacity = 1
-    } else {
-        menu.style.opacity = 0
-    }
+    menu.classList.toggle('menu__list--active')
 })
+
 // SCROLL TO PRICING SECTION
 const tryBtns = document.querySelectorAll('.try-free')
 const pricingSection = document.querySelector('.pricing')
@@ -92,23 +88,20 @@ const sliderPersonalName = document.querySelector('.slider__personal__name');
 const sliderPersonalCity = document.querySelector('.slider__personal__city');
 const slides = [...document.querySelectorAll('.opinion')]
 
-async function fetchRandomUsers(url = '') {
-    const users = await fetch(url)
-        .then(response => {
-            if (response.ok) {
-                return response
-            } else {
-                throw Error(response.status)
-            }
-        })
-        .then(response => response.json())
-        .then(response => response.results)
-        .catch(error => console.log(error + " coś nie tak"))
-    return users
+const fetchRandomUsers = async (url = '') => {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        return data.results
+    } catch (err) {
+        console.error(err)
+    }
 }
 
-async function setRandomUsers() {
-    const users = await fetchRandomUsers('https://randomuser.me/api/?results=7')
+const setRandomUsers = async () => {
+    const API = 'https://randomuser.me/api/?results=7';
+    const users = await fetchRandomUsers(API)
 
     const imgs = users.map(user => user.picture.medium)
     const name = users[0].name

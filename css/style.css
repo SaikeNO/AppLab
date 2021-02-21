@@ -69,7 +69,7 @@ body, html {
   font-size: 1.6rem;
 }
 
-.nav .container {
+.menu .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,12 +82,7 @@ body, html {
   padding: 20px 0 30px;
 }
 
-.logo {
-  font-size: 3rem;
-  display: inline-block;
-}
-
-.logo--link {
+.logo__link {
   text-decoration: none;
   color: #242F51;
 }
@@ -96,16 +91,23 @@ body, html {
   color: #FCAE61;
 }
 
-.main__nav__burger {
-  display: block;
+.menu__logo {
+  font-size: 3rem;
+  display: inline-block;
 }
 
-.main__nav__elem {
+.menu__burger {
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+
+.menu__list-item {
   text-align: right;
   display: inline-block;
 }
 
-.main__nav__elem--link {
+.menu__link {
   text-decoration: none;
   color: #242F51;
   padding: 18px 12px;
@@ -115,7 +117,7 @@ body, html {
   font-size: 1.6rem;
 }
 
-.main__nav__elem--link:hover {
+.menu__link:hover {
   border-bottom: 2px solid #242F51;
 }
 
@@ -1177,7 +1179,7 @@ body, html {
 }
 
 @media (max-width: 1280px) {
-  .nav {
+  .menu {
     margin: 0 40px;
   }
   .jackpots {
@@ -1247,10 +1249,10 @@ body, html {
 }
 
 @media (max-width: 1024px) {
-  .main__nav__elem--link {
+  .menu__list-item {
     font-size: 1.4rem;
   }
-  .logo {
+  .menu__logo {
     font-size: 2.6rem;
   }
   .container {
@@ -1364,8 +1366,8 @@ body, html {
   }
 }
 
-@media (max-width: 854px) {
-  .main__nav__ul {
+@media (max-width: 931px) {
+  .menu__list {
     position: fixed;
     right: 0;
     top: 0;
@@ -1382,24 +1384,27 @@ body, html {
     height: 100%;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-    -webkit-transition: .7s;
-    transition: .7s;
+    opacity: 0;
+    -webkit-transition: opacity .7s linear, -webkit-transform .7s ease;
+    transition: opacity .7s linear, -webkit-transform .7s ease;
+    transition: transform .7s ease, opacity .7s linear;
+    transition: transform .7s ease, opacity .7s linear, -webkit-transform .7s ease;
     background-color: #F9FBFC;
   }
-  .main__nav__burger {
+  .menu__burger {
     position: fixed;
     top: 35px;
     right: 40px;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 10px 3px 10px;
     z-index: 999;
   }
-  .main__nav__burger span {
+  .menu__burger span {
     display: block;
+    position: relative;
     width: 35px;
     height: 5px;
     margin-bottom: 7px;
-    position: relative;
     background-color: #242F51;
     border-radius: 4px;
     z-index: 998;
@@ -1408,39 +1413,40 @@ body, html {
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
-  .main__nav__burger span:first-child {
+  .menu__burger span:first-child {
     -webkit-transform-origin: 0 100%;
             transform-origin: 0 100%;
   }
-  .main__nav__burger span:nth-child(3) {
+  .menu__burger span:nth-child(3) {
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
   }
-  .main__nav__elem {
+  .menu__list-item {
     text-align: center;
     padding: 50px;
   }
-  .main__nav__elem--link {
+  .menu__link {
     font-size: 2.5rem !important;
     border: none;
   }
-  .main__nav__elem--link:hover {
+  .menu__link:hover {
     border: none;
   }
-  ul.active {
+  .menu__list--active {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    opacity: 1;
   }
-  ul.active ~ .main__nav__burger > span {
+  .menu__list--active ~ .main__nav__burger > span {
     -webkit-transform: rotate(45deg) translate(-2px, -1px);
             transform: rotate(45deg) translate(-2px, -1px);
   }
-  ul.active ~ .main__nav__burger span:nth-child(2) {
+  .menu__list--active ~ .main__nav__burger span:nth-child(2) {
     opacity: 0;
     -webkit-transform: rotate(0deg) scale(0.2, 0.2);
             transform: rotate(0deg) scale(0.2, 0.2);
   }
-  ul.active ~ .main__nav__burger span:nth-child(3) {
+  .menu__list--active ~ .main__nav__burger span:nth-child(3) {
     -webkit-transform: rotate(-45deg) translate(0, -1px);
             transform: rotate(-45deg) translate(0, -1px);
   }
@@ -1541,7 +1547,7 @@ body, html {
 }
 
 @media (max-width: 640px) {
-  .nav .container {
+  .menu .container {
     padding: 20px 0;
   }
   .jackpots .container {
@@ -1567,10 +1573,10 @@ body, html {
   .designed__title {
     padding: 0;
   }
-  .main__nav__elem {
+  .menu__list-item {
     padding: 20px;
   }
-  .main__nav__ul {
+  .menu__list {
     padding-top: 50px;
   }
   .testimonial__title {
@@ -1594,13 +1600,13 @@ body, html {
 }
 
 @media (orientation: landscape) and (max-width: 640px) {
-  .main__nav__elem {
+  .menu__list-item {
     padding: 10px;
   }
-  .main__nav__elem--link {
+  .menu__link {
     font-size: 2rem !important;
   }
-  .main__nav__ul {
+  .menu__list {
     padding: 20px 0;
   }
 }
@@ -1733,7 +1739,7 @@ body, html {
   .welcome-text__link {
     margin-left: 10px;
   }
-  .nav .container {
+  .menu .container {
     padding: 15px 0 15px 10px;
   }
   .items-awards__item {

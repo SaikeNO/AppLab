@@ -25,7 +25,7 @@
             margin: 0 auto
 
 @media ( max-width: 1280px )
-    .nav
+    .menu
         margin: 0 40px
     .jackpots
         margin: 130px 0
@@ -68,9 +68,9 @@
             text-align: center
             padding: 0
 @media ( max-width: 1024px )
-    .main__nav__elem--link
+    .menu__list-item
         font-size: 1.4rem
-    .logo
+    .menu__logo
         font-size: 2.6rem
     .container
         max-width: 980px
@@ -155,63 +155,62 @@
     .download__title
         font-size: 4rem
 //NAVI
-@media ( max-width: 854px )
-    .main__nav__ul
-        position: fixed
-        right: 0
-        top: 0
-        display: flex
-        flex-direction: column
-        z-index: 997
-        text-transform: uppercase
-        width: 100%
-        height: 100%
-        transform: translateX(100%)
-        transition: .7s
-        background-color: $bgc-color
-
-    .main__nav
+@media ( max-width: 931px)
+    .menu
+        &__list
+            position: fixed
+            right: 0
+            top: 0
+            display: flex
+            flex-direction: column
+            z-index: 997
+            text-transform: uppercase
+            width: 100%
+            height: 100%
+            transform: translateX(100%)
+            opacity: 0
+            transition: transform .7s ease, opacity .7s linear
+            background-color: $bgc-color
         &__burger
             position: fixed
             top: 35px
             right: 40px
             cursor: pointer
-            padding: 10px
+            padding: 10px 10px 3px 10px
             z-index: 999
             span
                 display: block
+                position: relative
                 width: 35px
                 height: 5px
                 margin-bottom: 7px
-                position: relative
                 background-color: $black-color
                 border-radius: 4px
                 z-index: 998
-
                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
                 &:first-child
                     transform-origin: 0 100%
                 &:nth-child(3)
                     transform-origin: 0 0
 
-        &__elem
+        &__list-item
             text-align: center
             padding: 50px
-            &--link
-                font-size: 2.5rem !important
+        &__link
+            font-size: 2.5rem !important
+            border: none
+            &:hover
                 border: none
-                &:hover
-                    border: none
-    ul.active
-        transform: translateX(0)
-
-        & ~ .main__nav__burger > span
-            transform: rotate(45deg) translate(-2px, -1px)
-        & ~ .main__nav__burger span:nth-child(2)
-            opacity: 0
-            transform: rotate(0deg) scale(0.2, 0.2)
-        & ~ .main__nav__burger span:nth-child(3)
-            transform: rotate(-45deg) translate(0, -1px)
+        &__list--active
+            transform: translateX(0)
+            opacity: 1
+            & ~ .main__nav__burger > span
+                transform: rotate(45deg) translate(-2px, -1px)
+            & ~ .main__nav__burger span:nth-child(2)
+                opacity: 0
+                transform: rotate(0deg) scale(0.2, 0.2)
+            & ~ .main__nav__burger span:nth-child(3)
+                transform: rotate(-45deg) translate(0, -1px)
     .faq .question--active
         height: 350px
     .faq .question
@@ -269,7 +268,7 @@
         margin-bottom: 30px
 
 @media ( max-width: 640px )
-    .nav .container
+    .menu .container
         padding: 20px 0
     .jackpots .container
         padding: 0 0 0 50px
@@ -284,10 +283,11 @@
         margin: 0 auto
     .designed__title
         padding: 0
-    .main__nav__elem
-        padding: 20px
-    .main__nav__ul
-        padding-top: 50px
+    .menu
+        &__list-item
+            padding: 20px
+        &__list
+            padding-top: 50px
     .testimonial__title
         font-size: 3rem
     .faq__header__title
@@ -302,12 +302,13 @@
         width: 90%
 
 @media (orientation: landscape) and ( max-width: 640px )
-    .main__nav__elem
-        padding: 10px
-        &--link
+    .menu
+        &__list-item
+            padding: 10px
+        &__link
             font-size: 2rem !important
-    .main__nav__ul
-        padding: 20px 0
+        &__list
+            padding: 20px 0
 @media ( max-width: 580px )
     .faq .question
         height: 95px
@@ -384,7 +385,7 @@
             font-size: 3rem
         &__link
             margin-left: 10px
-    .nav .container
+    .menu .container
         padding: 15px 0 15px 10px
     .items-awards__item
         padding: 20px
