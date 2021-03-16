@@ -4,6 +4,7 @@
   list-style: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  text-decoration: none;
 }
 
 body, html {
@@ -13,6 +14,7 @@ body, html {
   color: #242F51;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-display: swap;
 }
 
 .container {
@@ -1136,6 +1138,10 @@ body, html {
 .footer__copyright {
   margin-top: 90px;
   font-size: 1.4rem;
+}
+
+.socials__name {
+  display: none;
 }
 
 @media (max-width: 1450px) {
