@@ -3,7 +3,14 @@
     text-align: center
     padding: 100px 0
     .container
-        max-width: 500px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &__medias
+            flex-basis: 50%
+        &__form
+            flex-basis: 500px
+            width: 500px
     .logo--footer
         font-size: 2rem
         h1
@@ -43,3 +50,24 @@
 
 .socials__name
     display: none
+
+form
+    .form__title
+        color: $yellow-color
+        &__color
+            color: #fff
+    label
+        display: block
+        text-align: left
+        color: #fff
+        font-size: 1.6rem
+        margin-top: 15px
+    input,textarea
+        width: 100%
+        border-radius: 5px
+        border: none
+        padding: 10px
+
+    textarea
+        resize: none
+        height: 100px
